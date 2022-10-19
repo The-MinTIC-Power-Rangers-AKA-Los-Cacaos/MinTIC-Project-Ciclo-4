@@ -1,0 +1,26 @@
+.Rectangle {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 8%;
+    background-color: #1f4e77;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.Rectangle .box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box a {
+    display: flex;
+    text-decoration: none;
+    color: #4D8CC3;
+    font-size: 2vw;
+    margin: auto;
+    padding-left: 15%;
+    padding-right: 15%;
+}
