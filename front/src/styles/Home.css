@@ -1,0 +1,11 @@
+.Home{
+  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+  grid-template-columns: 350px 350px 350px;
+  justify-content: center;
+
+}
+
