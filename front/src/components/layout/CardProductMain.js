@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import '../../styles/layout/CardProductMain.css'
 
 const CardProductMain = (props) => {
-  return (
-    <>
-        <div key={props.id} className='tarjetaProductMain' >
-            <div className='cardMain'>
-               <img src={props.image}></img> 
+    return (
+        <Fragment>
+            <div key={props.id} className='tarjetaProductMain' >
+                <div className='cardMain'>
+                    <img src={props.image}></img>
+                </div>
             </div>
-        </div>
+        </Fragment>
+        
         {/*<div className='productList'>
              <div key={props.id} className='productCard'>
                  <img src={props.image} alt='product-img' className='productImage'></img>
