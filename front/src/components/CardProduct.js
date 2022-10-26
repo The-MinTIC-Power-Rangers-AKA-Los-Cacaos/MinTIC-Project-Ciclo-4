@@ -1,5 +1,4 @@
 import React from 'react'
-import {FaShoppingCart, FaRegBookmark, FaStar, FaFireAlt} from 'react-icons/fa'
 import '../styles/CardProducts.css'
 
 const CardProducts = (props) => {

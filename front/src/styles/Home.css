@@ -1,9 +1,10 @@
 .Home{
-  margin-top: 50px;
+  padding: 0px;
+  margin: 0px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-content: center;
+  justify-content: center;
 }
 
 

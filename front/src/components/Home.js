@@ -12,12 +12,14 @@ export function HomeProducts(props) {
     
     return(
     <>
-      <HeaderMain />
       <div className="Home">
+      <HeaderMain />
       {productData.map(product => (
         <CardProducts 
           key={product.id}
           image={product.image}
+          name={product.name}
+          price={product.price}
         />
        ))}   
       </div>

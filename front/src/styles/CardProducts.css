@@ -1,23 +1,12 @@
 .tarjetaProduct {
-    width: 181.26px;
-    height: 186px;
-    margin: 25px;
-    
-}
-
-.card {
-  width: 181.26px;
-  height: 186px;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
-}
-
-.card img{
-  width: 181.26px;
-  height: 186px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height:500px;
+  margin: 0px;
+  background-color: #ffffff;
+  margin: 50px;
+  border: 1px solid #4187AE;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -25,98 +14,124 @@
   -o-border-radius: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.productList{
-  display: grid;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 2rem 2rem;
-}
-
-.productCard{
-  position: relative;
-  background-color: var(--color-grey-primary);
-  margin: 2rem;
-  flex: 1 0 25rem;
-  max-width: 30rem;
-  max-height: 50rem;
-  transition: 0.2s;
-  
-}
-
-.productCard:hover{
-  transform: translateY(-0.5rem);
-  box-shadow: 0.5rem 0.75rem 1.5rem #bbbbbb;
-}
-
-.productImage{
-  margin: 2rem;
-  width: 220px;
-  height: 280px;
-}
-
-.productCard__cart{
-  position: absolute;
-  right: 0;
-  margin: 1rem;
-  font-size: 2rem;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.productCard__wishlist{
-  position: absolute;
-  right: 3rem;
-  margin: 1rem;
-  font-size: 2rem;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.productCard__fastSelling {
-  position: absolute;
-  font-size: 2rem;
-  left: 0;
-  margin: 1rem;
-  fill: var(--color-orange-primary);
-}
-
-.productCard__content {
-  margin: 2rem;
- 
+.card img{
+width: 250px;
+height: 250px;
 }
 
 .productName{
-  font-size: 1.5rem;
+font-family: 'Inter';
+font-style: normal;
+font-size: 30px;
+text-align: center;
+color: #181739;
+margin: 10px;
 }
 
-.displayStack__1,
-.displayStack__2{
-  margin: 2rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.hr{
+width: 70%;
+border: solid 0.25px #4187AE;
 }
 
-.productPrice{
-  font-size: 1.5rem;
-  font-weight: bold;
+.priceProduct{
+margin: 15px;
+font-family: 'Inter';
+font-style: normal;
+font-size: 35px;
+text-align: center;
+text-decoration-line: underline;
+color: #3DB448;
 }
 
-.productSales,
-.productTime{
-  font-size: 1.1rem;
+.butonAgregar{
+justify-content: center;
+margin-top: 10px;
 }
+
+.butonAgregar button{ width: 250px; 
+  height: 50px;
+   background: #05B593;
+    border: none;
+     border-radius: 20px;
+      -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+         -o-border-radius: 20px;
+          font-family: 'Inter';
+           font-style: normal;
+             font-size: 35px;
+               color: #FFFFFF;
+}
+
+/*
+.tarjetaProduct {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height:58vh;
+    margin: 0px;
+    background-color: #ffffff;
+    margin: 6vh;
+    border: 1px solid #4187AE;
+    border-radius: 1.5vh;
+    -webkit-border-radius: 1.5vh;
+    -moz-border-radius: 1.5vh;
+    -ms-border-radius: 1.5vh;
+    -o-border-radius: 1.5vh;
+}
+
+.card img{
+  width: 18vw;
+  height: 30vh;
+}
+
+.productName{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 0.5vh;
+  font-size: 3vh;
+  line-height: 3.9vh;
+  text-align: center;
+  color: #181739;
+  margin: 0.6vh;
+}
+
+.hr{
+  width: 70%;
+  border: solid 0.25px #4187AE;
+}
+
+.priceProduct{
+  margin: 1.2vh;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 2vh;
+  font-size: 4.4vh;
+  line-height: 5.3vh;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #3DB448;
+}
+
+.butonAgregar{
+ justify-content: center;
+ margin-top: 1.2vh;
+}
+
+.butonAgregar button{
+  width: 15vw;
+  height: 6vh;
+  background: #05B593;
+  border: none;
+  border-radius: 1.5vh;
+  -webkit-border-radius: 1.5vh;
+  -moz-border-radius: 1.5vh;
+  -ms-border-radius: 1.5vh;
+  -o-border-radius: 1.5vh;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight:4vh;
+  font-size: 4vh;
+  line-height: 1.5vh;
+  color: #FFFFFF;
+}*/
