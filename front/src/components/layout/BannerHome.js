@@ -1,8 +1,8 @@
 import React from 'react'
-import imagenmain from '../img/header-main.png'
-import '../styles/HeaderMain.css'
+import imagenmain from '../../img/banner-home.png'
+import '../../styles/layout/BannerHome.css'
 
-export function HeaderMain(params) {
+export function BannerHome(params) {
   return (
     <div className="bannerContainer" >
       <div className='imagenContainer'>

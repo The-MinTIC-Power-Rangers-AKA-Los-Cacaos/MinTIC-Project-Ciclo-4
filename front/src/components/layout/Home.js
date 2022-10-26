@@ -1,9 +1,8 @@
 import React from "react";
-import { productData } from "../api/productData";
+import { productData } from "../../api/productData";
 import CardProducts from "./CardProducts";
-import '../styles/Home.css';
-import { HeaderMain } from "./HeaderMain";
-import CardProductMain from "./CardProductMain";
+import '../../styles/layout/Home.css';
+import { BannerHome } from "./BannerHome";
 
 
 
@@ -13,7 +12,7 @@ export function HomeProducts(props) {
     return(
     <>
       <div className="Home">
-      <HeaderMain />
+      <BannerHome />
       {productData.map(product => (
         <CardProducts 
           key={product.id}

@@ -1,6 +1,6 @@
 import React from 'react'
 import {FaShoppingCart, FaRegBookmark, FaStar, FaFireAlt} from 'react-icons/fa'
-import '../styles/CardProducts.css'
+import '../../styles/layout/CardProducts.css'
 
 const CardProducts = (props) => {
   return (
