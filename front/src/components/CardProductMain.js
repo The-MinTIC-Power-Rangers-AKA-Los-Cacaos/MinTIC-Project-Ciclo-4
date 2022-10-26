@@ -1,12 +1,11 @@
-import React from 'react'
-import {FaShoppingCart, FaRegBookmark, FaStar, FaFireAlt} from 'react-icons/fa'
-import '../styles/CardProducts.css'
+import React from 'react';
 
-const CardProducts = (props) => {
+
+const CardProductMain = (props) => {
   return (
     <>
-        <div key={props.id} className='tarjetaProduct' >
-            <div className='card'>
+        <div key={props.id} className='tarjetaProductMain' >
+            <div className='cardMain'>
                <img src={props.image}></img> 
             </div>
         </div>
@@ -40,4 +39,4 @@ const CardProducts = (props) => {
   )
 }
 
-export default CardProducts
+export default CardProductMain

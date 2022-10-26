@@ -1,16 +1,30 @@
 import React from "react";
 import { productData } from "../api/productData";
 import CardProducts from "./CardProducts";
-import '../styles/Home.css'
+import '../styles/Home.css';
+import { HeaderMain } from "./HeaderMain";
+import CardProductMain from "./CardProductMain";
+
+
 
 
 export function HomeProducts(props) {
     
     return(
-    
-    <div className="Home">
+    <>
+      <HeaderMain />
+      <div className="Home">
       {productData.map(product => (
         <CardProducts 
+          key={product.id}
+          image={product.image}
+        />
+       ))}   
+      </div>
+       
+      {/*<div className="homeProduct">
+      {productData.map(product => (
+        <CardProductMain
           key={product.id}
           image={product.image}
           name={product.name}
@@ -19,7 +33,8 @@ export function HomeProducts(props) {
           timeLeft={product.timeLeft}
           rating={product.rating}
         />
-      ))}   
-    </div>
+        ))}   
+      </div>*/}
+    </>
     )
 }
