@@ -1,0 +1,137 @@
+.tarjetaProduct {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height:500px;
+  margin: 0px;
+  background-color: #ffffff;
+  margin: 50px;
+  border: 1px solid #4187AE;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.card img{
+width: 250px;
+height: 250px;
+}
+
+.productName{
+font-family: 'Inter';
+font-style: normal;
+font-size: 30px;
+text-align: center;
+color: #181739;
+margin: 10px;
+}
+
+.hr{
+width: 70%;
+border: solid 0.25px #4187AE;
+}
+
+.priceProduct{
+margin: 15px;
+font-family: 'Inter';
+font-style: normal;
+font-size: 35px;
+text-align: center;
+text-decoration-line: underline;
+color: #3DB448;
+}
+
+.butonAgregar{
+justify-content: center;
+margin-top: 10px;
+}
+
+.butonAgregar button{ width: 250px; 
+  height: 50px;
+   background: #05B593;
+    border: none;
+     border-radius: 20px;
+      -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+         -o-border-radius: 20px;
+          font-family: 'Inter';
+           font-style: normal;
+             font-size: 35px;
+               color: #FFFFFF;
+}
+
+/*
+.tarjetaProduct {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height:58vh;
+    margin: 0px;
+    background-color: #ffffff;
+    margin: 6vh;
+    border: 1px solid #4187AE;
+    border-radius: 1.5vh;
+    -webkit-border-radius: 1.5vh;
+    -moz-border-radius: 1.5vh;
+    -ms-border-radius: 1.5vh;
+    -o-border-radius: 1.5vh;
+}
+
+.card img{
+  width: 18vw;
+  height: 30vh;
+}
+
+.productName{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 0.5vh;
+  font-size: 3vh;
+  line-height: 3.9vh;
+  text-align: center;
+  color: #181739;
+  margin: 0.6vh;
+}
+
+.hr{
+  width: 70%;
+  border: solid 0.25px #4187AE;
+}
+
+.priceProduct{
+  margin: 1.2vh;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 2vh;
+  font-size: 4.4vh;
+  line-height: 5.3vh;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #3DB448;
+}
+
+.butonAgregar{
+ justify-content: center;
+ margin-top: 1.2vh;
+}
+
+.butonAgregar button{
+  width: 15vw;
+  height: 6vh;
+  background: #05B593;
+  border: none;
+  border-radius: 1.5vh;
+  -webkit-border-radius: 1.5vh;
+  -moz-border-radius: 1.5vh;
+  -ms-border-radius: 1.5vh;
+  -o-border-radius: 1.5vh;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight:4vh;
+  font-size: 4vh;
+  line-height: 1.5vh;
+  color: #FFFFFF;
+}*/
