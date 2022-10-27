@@ -6,13 +6,15 @@ import { HomeProducts } from './components/layout/Home';
 import NewProducts from './components/layout/NewProducts';
 import ViewProducts from './components/layout/ViewProducts';
 import { CategoriesHeader } from './components/layout/CategoriesHeader';
+import ShoppingCart from './components/layout/ShoppingCart';
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <CategoriesHeader/>
-      <HomeProducts />
+      <ShoppingCart/>
+      {/* <CategoriesHeader/>
+      <HomeProducts /> */}
       <Footer/>
     </div>
   );

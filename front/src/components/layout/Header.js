@@ -9,19 +9,23 @@ const header = () => {
 
         <div class="wrap">
           <div class="search">
-            <input type="text" class="searchTerm" placeholder="¿Que estas buscando?"></input>
+            <input type="text" class="searchTerm" placeholder="¿Qué estás buscando?"></input>
             <button type="submit" class="searchButton">
               <i class="fa fa-search"></i>
             </button>
           </div>
         </div>
 
-        <div class="carrito">
+        {/* <div class="carrito">
 
           <a href="#"><img class="img-carrito" src="./img/carrito.png" alt=""></img></a>
 
 
-        </div>
+        </div> */}
+
+        <a href="#" class="carrito"><div>
+          <img class="img-carrito" src="../../img/carrito.png" alt="" />
+        </div></a>
 
         <nav>
           <label for="touch"><span><img class="login-1" src="./img/usuarios.png" alt=""></img></span></label>

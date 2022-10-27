@@ -5,7 +5,7 @@ export const productData = [
     image:
       "https://copservir.vtexassets.com/arquivos/ids/772700/ACETAMINOFEN-FORTE-MK_L.png?v=637951132514870000",
     productType: "Medicamentos",
-    price: 5000,
+    price: 8000,
     rating: 5,
     timeLeft: 27,
     totalSales: 7479 
