@@ -1,22 +1,35 @@
 import './App.css';
+import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom'
 import React from 'react';
-import Footer from './components/layout/Footer';
-import Header from './components/layout/Header';
-import { HomeProducts } from './components/layout/Home';
-import NewProducts from './components/layout/NewProducts';
-import ViewProducts from './components/layout/ViewProducts';
-import { CategoriesHeader } from './components/layout/CategoriesHeader';
-import ShoppingCart from './components/layout/ShoppingCart';
+import NotFound from './pages/NotFound';
+import Home from './pages/Home';
+import { BannerHome } from './components/layout/BannerHome';
+import {Login} from './pages/Login';
+import { Register } from './pages/Register';
+import { Products } from './components/products/Products';
+import {ProductDetail} from './components/products/ProductDetail'
+import ShoppingCart from './components/cart/ShoppingCart'
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <ShoppingCart/>
-      {/* <CategoriesHeader/>
-      <HomeProducts /> */}
-      <Footer/>
-    </div>
+   
+      <Routes>
+        <Route path='/' element={<Home />}>
+          <Route path='/' element={
+            <>
+              <BannerHome />
+
+              <Products />
+            </>
+          } />
+       </Route>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/register' element={<Register />}/>
+          <Route path='/:id' element={<ProductDetail />}/>
+          <Route path='/cart' element={<ShoppingCart />} />
+
+        <Route path='*' element={<NotFound />}/>
+      </Routes>
   );
 }
 

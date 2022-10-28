@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react'
 import { productData } from '../../api/productData'
+import Footer from '../layout/Footer'
+import Header from '../layout/Header'
 import ShoppingCartCard from './ShoppingCartCard'
 import ShoppingCartTitle from './ShoppingCartTitle'
 
 const ShoppingCart = (props) => {
     return (
         <Fragment>
+            <Header />
             <ShoppingCartTitle />
             {productData.map(product => (
                 <ShoppingCartCard
@@ -14,6 +17,7 @@ const ShoppingCart = (props) => {
                     name={product.name}
                 />
             ))}
+            <Footer />
         </Fragment>
     )
 }

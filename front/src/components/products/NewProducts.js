@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import "../../styles/layout/NewProducts.css"
+import "../../styles/components/products/NewProducts.css"
 
 const NewProducts = () => {
   return (

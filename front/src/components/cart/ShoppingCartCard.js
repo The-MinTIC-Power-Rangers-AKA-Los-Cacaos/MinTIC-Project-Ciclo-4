@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
-import { productData } from "../../api/productData";
-import "../../styles/layout/ShoppingCart.css"
+import "../../styles/components/cart/ShoppingCart.css"
 
 const ShoppingCartCard = (props) => {
     return (

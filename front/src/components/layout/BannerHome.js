@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import imagenmain from '../../img/banner-home.png'
-import '../../styles/layout/BannerHome.css'
+import "../../styles/components/layout/BannerHome.css"
 
 export function BannerHome(params) {
   return (

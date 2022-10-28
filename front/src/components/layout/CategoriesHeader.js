@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import '../../styles/layout/CategoriesHeader.css'
+import '../../styles/components/layout/CategoriesHeader.css'
 
 export function CategoriesHeader(params) {
     return (

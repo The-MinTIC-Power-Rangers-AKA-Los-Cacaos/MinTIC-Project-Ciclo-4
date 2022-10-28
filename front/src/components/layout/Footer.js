@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import "../../styles/layout/Footer.css"
+import "../../styles/components/layout/Footer.css"
 
-const footer = () => {
+const Footer = () => {
   return (
     <Fragment>
         <footer class="Rectangle">
@@ -18,4 +18,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer

@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react'
-import "../../styles/layout/Header.css"
+import { Link } from 'react-router-dom'
+import "../../styles/components/layout/Header.css"
 
-const header = () => {
+const Header = () => {
   return (
     <Fragment>
       <header class="Rectangle-1">
-        <a href="#"><img class="logo-1" src="../../img/logorecortada.png" alt=""></img></a>
+        <Link to={'/'}><img class="logo-1" src="../../img/logorecortada.png" alt=""></img></Link>
 
         <div class="wrap">
           <div class="search">
@@ -23,9 +24,9 @@ const header = () => {
 
         </div> */}
 
-        <a href="#" class="carrito"><div>
+        <Link to={'/cart'} class="carrito"><div>
           <img class="img-carrito" src="../../img/carrito.png" alt="" />
-        </div></a>
+        </div></Link>
 
         <nav>
           <label for="touch"><span><img class="login-1" src="./img/usuarios.png" alt=""></img></span></label>
@@ -35,9 +36,9 @@ const header = () => {
             <li><input type="text" class="input-menu"></input></li>
             <li class="text-menu">Contraseña:</li>
             <li><input type="text" class="input-menu"></input></li>
-            <li><a href="#"><button class="salir">Ingresar</button></a></li>
+            <li><Link to={'/login'}><button class="salir">Ingresar</button></Link></li>
             <li class="registro">¿Aun no estas registrado?</li>
-            <li class="registrate"><a href="#">Registrate</a></li>
+            <li class="registrate"><Link to={'/register'}>Registrate</Link></li>
           </ul>
         </nav>
       </header>
@@ -45,4 +46,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header

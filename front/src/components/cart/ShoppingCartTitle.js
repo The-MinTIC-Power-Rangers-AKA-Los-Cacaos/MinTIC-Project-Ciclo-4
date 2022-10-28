@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { productData } from '../../api/productData'
-import "../../styles/layout/ShoppingCart.css"
+import "../../styles/components/cart/ShoppingCart.css"
 
 const ShoppingCartTitle = () => {
     const sum =  productData.reduce((a,v) =>  a = a + v.price , 0 )
