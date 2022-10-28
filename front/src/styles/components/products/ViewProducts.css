@@ -1,12 +1,22 @@
-main{
-    margin-top: 10vw;
+.main-01{
+    margin-top: 1vw;
 }
-.nav {
+.nav-view {
     margin: auto 5vw;
     justify-content: space-between;
     display: flex;
 }
-.title {
+
+#back-view {
+    font-size: 2.5vw;
+    margin: auto;
+    text-decoration: none;
+    color: #1f4e77;
+    display: inline-flex;
+    margin-top: 5vw;
+    margin-left: 4vw;
+}
+.title-view {
     text-align: center;
     color: #a0a0a0;
     margin-top: 3%;
@@ -43,10 +53,12 @@ main{
     text-decoration: none;
     color: white;
 }
-.datable {
+
+/*margin: 2vw auto 3vw; original*/
+.datable-view {
     font-size: 1vw;
     background: #FBFBFB;
-    margin: 2vw auto 3vw;
+    margin: 2vw auto 4.1vw;
     border: 1px solid #ddd;
     border-collapse: separate;
     border-left: 0;
@@ -54,8 +66,8 @@ main{
     border-spacing: 0px;
 }
 
-.datable th,
-.datable td {
+.datable-view th,
+.datable-view td {
     text-align: center;
 }
 
@@ -117,7 +129,7 @@ tr:last-of-type td:last-of-type {
     border-bottom-right-radius: 15px;
 }
 
-body main table .btn-table {
+.btn-table {
     position: relative;
     height: 4vh;
     display: inline-block;
@@ -208,39 +220,4 @@ body main table .btn-table {
     margin-top: auto;
     margin-bottom: auto;
     padding: 0.7vh 1vw;
-}
-
-/* Footer */
-
-.Rectangle-3 {
-    display: flex;
-    align-items: flex-end;
-    width: 100%;
-    min-height: 8%;
-    background-color: #1f4e77;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-}
-
-.Rectangle-3 .iconos {
-    display: flex;
-    justify-content: space-between;
-    text-decoration: none;
-}
-
-
-.Rectangle-3 .box {
-    display: flex;
-    justify-content: space-between;
-}
-
-.box a {
-    display: flex;
-    text-decoration: none;
-    color: #4D8CC3;
-    font-size: 1.5vw;
-    margin: auto;
-    padding-left: 15%;
-    padding-right: 15%;
 }

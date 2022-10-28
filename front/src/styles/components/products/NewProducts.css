@@ -1,20 +1,22 @@
-main {
+    /*margin-top: 20vw;*/
+.main-new {
     background-color: #d4f2ff;
-    margin-top: 20vw;
+    margin-top: 1vw;
     font-family: 'Inter', sans-serif;
+    display: block;
 }
 
 body #toast-container > div {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 
 .op-1{
     display: flex;
     justify-content: space-between;
-    margin-top: 5vw;
+    margin-top: 0.1px;
 }
 
-#back {
+#back-001 {
     font-size: 2.5vw;
     margin: auto;
     text-decoration: none;
@@ -28,26 +30,28 @@ h2{
     text-align: center;
     color: #a0a0a0;
     margin-top: 2.8vw;
-    margin-bottom: 4%;
+    margin-bottom: 2.35vw;
     margin-right: 7vw;
     display: block;
     font-size: 2vw;
+    font-family: 'Inter', sans-serif;
 }
 
-.color1{
+.color1-new{
     color: #05b593;
 }
 
 
-.Rectangle-2{
+.Rectangle-new{
     align-self: center;
     width: 47vw;
     height: auto;
     background-color:#fff;
     margin-right: 25%;
     margin-left: 16%;
-    padding-left: 10%;
-    padding-right: 10%;
+    margin-bottom: 2.6vw;
+    padding-left: 5.9%;
+    padding-right: 14%;
     padding-top: 0.25%;
     justify-content: center;
     border-radius: 3.8vw;
@@ -62,26 +66,42 @@ br{
     margin-top: 0.6vw;
 }
 
-.textos{
+.form-new{
+    width: 55vw;
+    margin-right: none;
+}
+
+.textos-new{
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.inputs{
+.inputs-new{
+    display: inline-flex;
+    flex-direction: column;
+}
+.textos-2-new{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 4vw;
+}
+
+.inputs-2-new{
     display: inline-flex;
     flex-direction: column;
 }
 
-
-.Text-1{
+.Text-1-new{
     margin: 1vw auto 1.2vw;
     text-align: center;
     color: #a0a0a0;
     font-size: 2vw;
+    display: block;
 }
 
-.Text-2{
+.Text-2-new{
     color: #a0a0a0;
     font-size: 2vw;
     margin-left: none;
@@ -89,18 +109,19 @@ br{
     display: inline;
 }
 
-.Input-1{
+.Input-1-new{
     width: 80%;
     padding: 0.3vw 0.3vw;
     border-radius:0.75vw;
     border: solid;
     border-color: #a0a0a0;
-    margin-left: 10%;
+    margin-left: 8%;
     margin-right: 10% ;
+    margin-bottom: 1%;
     font-size: 1vw;
 }
 
-.Text-3{
+.Text-3-new{
     vertical-align: middle;
     color: #a0a0a0;
     font-size: 2vw;
@@ -114,42 +135,44 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }*/
 
-.Input-2{
+.Input-2-new{
     vertical-align: middle;
     padding: 0.3vw 0.3vw;
     border-radius:0.75vw;
     border: solid;
     border-color: #a0a0a0;
     margin-left: 8%;
+    margin-bottom: 1%;
     width: 80%;
     resize: none;
     font-size: 1vw;
 }
 
-.Text-4{
+.Text-4-new{
     color: #a0a0a0;
     font-size: 2vw;
     margin-left: none;
     display: inline;
 }
 
-.Input-3{
-    width: 80%;
+.Input-3-new{
+    width: 90%;
     padding: 0.3vw 0.3vw;
     border-radius:0.75vw;
     border: solid;
     border-color: #a0a0a0;
     margin-left: 7.5%;
-    margin-right: 10% ;
+    margin-right: 10%;
+    margin-bottom: 1%;
     font-size: 1vw;
 }
-.Text-5{
+.Text-5-new{
     color: #a0a0a0;
     font-size: 2vw;
     margin-left: none;
     display: inline;
 }
-.Input-4{
+.Input-4-new{
     width: 80%;
     padding: 0.3vw 0.3vw;
     border-radius:0.75vw;
@@ -159,9 +182,47 @@ input[type=number]::-webkit-outer-spin-button {
     margin-right: 10% ;
     font-size: 1vw;
 }
+.Text-6-new{
+    color: #a0a0a0;
+    font-size: 2vw;
+    margin-left: none;
+    display: inline;
+}
+
+.Input-5-new{
+    vertical-align: middle;
+    padding: 0.3vw 0.3vw;
+    border-radius:10px;
+    border: solid;
+    border-color: #a0a0a0;
+    margin-left: 5%;
+    width: 12vw;
+    height: 3.7vw;
+    resize: none;
+    font-size: 1vw;
+}
+
+.Text-7-new{
+    color: #a0a0a0;
+    font-size: 2vw;
+    margin-left: none;
+    display: inline;
+    margin-top: 4.5vw;
+}
+.Input-6-new{
+    width: 12vw;
+    padding: 0.3vw 0.3vw;
+    border-radius:0.75vw;
+    border: solid;
+    border-color: #a0a0a0;
+    margin-left: 5%;
+    margin-right: 10% ;
+    margin-top: 2vw;
+    font-size: 1vw;
+}
 
 
-.bto-2{
+.bto-2-new{
     display: block;
     transition: 0.35s;
     font-family: 'Inter';
@@ -177,7 +238,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 1.6vw;
     cursor: pointer;
 }
-.bto-2:hover {
+.bto-2-new:hover {
     background-color: #0a8169;
 }
 
