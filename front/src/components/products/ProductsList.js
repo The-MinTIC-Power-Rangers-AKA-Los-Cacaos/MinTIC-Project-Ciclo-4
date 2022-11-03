@@ -5,11 +5,12 @@ import '../../styles/components/products/ProductLista.css'
 
 export const ProductsList = (props) => {
 
+    console.log(props, props.id)
   return (
     <>
       <div key={props.id} className='tarjetaProduct' >
         <div className='card' id={props.id}>
-          <Link to={`/${props.id}`}>
+          <Link to={`/producto/${props.id}`}>
            <img src={props.image}></img>
           </Link>
         </div>

@@ -17,7 +17,8 @@ exports.getProductById = async (req, res, next) => {
     if (!tempProduct) {
         return res.status(404).json({
             success: false,
-            message: "product couldn't be found"
+            message: "product couldn't be found",
+            error:true
         })
     } else {
         return res.status(200).json({
@@ -33,7 +34,7 @@ exports.newProduct = async (req, res, next) => {
 
     return res.status(200).json({
         sucess: true,
-        product
+        prod
     })
 }
 

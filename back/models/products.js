@@ -38,9 +38,11 @@ const productsSchema = mongoose.Schema({
         required: [true, "select product's category"],
         enum: {
             values: [
-                "Vehicles",
-                "Replacement parts",
-                "Maintenance tools"
+                "Higiene",
+                "Salud",
+                "Aseo",
+                "Comida",
+                "Nutricion"
             ]
         }
     },

@@ -29,7 +29,7 @@ const Header = () => {
         </div></Link>
 
         <nav>
-          <label for="touch"><span><img class="login-1" src="./img/usuarios.png" alt=""></img></span></label>
+          <label for="touch"><span><img class="login-1" src="../../img/usuarios.png" alt=""></img></span></label>
           <input type="checkbox" id="touch"></input>
           <ul class="slide">
             <li class="text-menu">Correo Electronico:</li>
