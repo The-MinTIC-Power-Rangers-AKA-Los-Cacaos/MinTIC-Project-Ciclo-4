@@ -7,7 +7,8 @@ import { BannerHome } from './components/layout/BannerHome';
 import {Login} from './pages/Login';
 import { Register } from './pages/Register';
 import { Products } from './components/products/Products';
-import {ProductDetail} from './components/products/ProductDetail'
+import {ProductDetail} from './components/products/ProductDetail';
+import { SalePage } from './components/shop/SalePage';
 import ShoppingCart from './components/cart/ShoppingCart'
 import NewProducts from './components/products/NewProducts';
 
@@ -29,7 +30,7 @@ function App() {
           <Route path='/producto/:id' element={<ProductDetail />}/>
           <Route path='/cart' element={<ShoppingCart />} />
           <Route path='/newproduct' element={<NewProducts/>}/>
-          
+          <Route path='/saleslist' element={<SalePage/>}/>
         <Route path='*' element={<NotFound />}/>
       </Routes>
   );
