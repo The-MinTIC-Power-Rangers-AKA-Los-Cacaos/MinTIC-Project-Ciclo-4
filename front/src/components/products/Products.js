@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route} from 'react-router-dom'
-import { productData } from "../../api/productData";
 import '../../styles/pages/Home.css';
 import {ProductsList} from "./ProductsList";
 import {useDispatch} from 'react-redux'
@@ -10,6 +9,8 @@ import { useSelector } from "react-redux";
 
 
 export function Products() {
+
+  
   const dispatch= useDispatch();
 
   useEffect(() => {
