@@ -2,13 +2,13 @@
     margin-top: 1vw;
     margin-left: 1vw;
 }
-.nav-view {
+.nav-sale {
     margin: auto 5vw;
     justify-content: space-between;
     display: flex;
 }
 
-#back-view {
+#back-sale {
     font-size: 2.5vw;
     margin: auto;
     text-decoration: none;
@@ -16,7 +16,7 @@
     display: inline-flex;
     margin-left: 4vw;
 }
-#back-lk-view{
+#back-lk-sale{
     text-decoration: none;
     margin-top: 5vw;
 }
@@ -32,42 +32,10 @@
     color: #047c64;
 }
 
-#btn-view {
-    transition: 0.3s;
-    border: none;
-    width: 5vw;
-    height: 4vw;
-    font-family: 'Inter';
-    font-style: normal;
-    color: #FFFFFF;
-    font-size: 1.2vw;
-    background: #05B593;
-    box-shadow: 0vh 0.42vh 0.42vh rgba(0, 0, 0, 0.25);
-    border-radius: 3.20vh;
-    -webkit-border-radius: 3.20vh;
-    -moz-border-radius: 3.20vh;
-    -ms-border-radius: 3.20vh;
-    -o-border-radius: 3.20vh;
-    cursor: pointer;
-}
 
-
-#btn-view:hover {
-    background: #047c64;
-}
-
-#btn-lk-view{
-    margin-top: 4vw;
-    height: 3vw;
-}
-
-#btn-view a {
-    text-decoration: none;
-    color: white;
-}
 
 /*margin: 2vw auto 3vw; original*/
-.datable-view {
+.datable-sale {
     font-size: 1vw;
     background: #FBFBFB;
     margin: 2vw auto 4.1vw;
@@ -78,12 +46,12 @@
     border-spacing: 0px;
 }
 
-.datable-view th,
-.datable-view td {
+.datable-sale th,
+.datable-sale td {
     text-align: center;
 }
 
-thead {
+.datable-sale thead {
     display: table-header-group;
     vertical-align: middle;
     border-color: inherit;
@@ -93,7 +61,7 @@ thead {
 }
 
 
-tr {
+.datable-sale tr {
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
@@ -110,23 +78,23 @@ th {
     font-size: larger;
 }
 
-td {
+.datable-sale td {
     border-top: 1px solid #ddd;
     border-left: 1px solid #ddd;
     font-weight: bold;
 }
 
-thead:first-child tr:first-child th:first-child,
-tbody:first-child tr:first-child td:first-child {
+.datable-sale thead:first-child tr:first-child th:first-child,
+.data-sale tbody:first-child tr:first-child td:first-child {
     border-radius: 15px 0 0 0;
 }
 
-thead:last-child tr:last-child th:first-child,
-tbody:last-child tr:last-child td:first-child {
+.datable-sale thead:last-child tr:last-child th:first-child,
+.datable-sale tbody:last-child tr:last-child td:first-child {
     border-radius: 0 0 0 15px;
 }
 
-th:first-of-type {
+.datable-sale th:first-of-type {
     border-top-left-radius: 15px;
 }
 
@@ -142,7 +110,7 @@ tr:last-of-type td:last-of-type {
     border-bottom-right-radius: 15px;
 }
 
-.btn-table {
+.datable-sale {
     position: relative;
     height: 4vh;
     display: inline-block;
@@ -178,7 +146,7 @@ tr:last-of-type td:last-of-type {
 
 
 .pagination {
-    margin-top: -2vw;
+    margin-top: 1vw;
 }
 
 .pagination li {

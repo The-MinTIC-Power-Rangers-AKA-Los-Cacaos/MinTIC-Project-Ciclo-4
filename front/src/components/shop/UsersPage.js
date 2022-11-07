@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 
-export const SalePage = () => {
+export const UsersPage = () => {
   return (
     <Fragment>
         <Header/>
@@ -12,21 +12,21 @@ export const SalePage = () => {
         <div>
             
         </div>
-        <div class="nav-sale">
-            <Link to={"/control"} id="back-lk-sale">
-                <nav class="fa-solid fa-arrow-left" id="back-sale"></nav>
+        <div class="nav-view">
+            <Link to={"/control"} id="back-lk-view">
+                <nav class="fa-solid fa-arrow-left" id="back-view"></nav>
             </Link>
             <h2 class="title-sale">Sistema de gestión de<span> Ventas</span></h2>
             <div></div>
         </div>
-        <table class="datable-sale">
+        <table class="datable-view">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nº de Venta</th>
                     <th>Productos Vendidos</th>
                     <th>Monto</th>
-                    <th>Productos totales</th> 
+                    <th>Productos totales</th>
                     <th>Usuario</th>
                     <th>Fecha de venta</th>
                     </tr>
@@ -75,4 +75,3 @@ export const SalePage = () => {
     </Fragment>
   )
 }
-
