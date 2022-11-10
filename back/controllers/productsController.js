@@ -6,7 +6,7 @@ const fetch = (url) => import("node-fetch").then(({ default: fetch }) => fetch(u
 
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
-    const resPerPage = 2;
+    /*const resPerPage = 2;
     const productsCount = await Product.countDocuments();
 
     const apiFeatures = new APIFeatures(Product.find(), req.query).search().filter();
@@ -22,7 +22,7 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
         resPerPage,
         filteredProductsCount,
         prod
-    })
+    })*/
 
     const products = await Product.find();
     if (!products) {

@@ -10,7 +10,6 @@ export const Login = () => {
   
   return (
     <div className='Login'>
-      <Header />
       <div>
         {login ? ( 
         <ViewProducts /> 
