@@ -19,8 +19,6 @@ function App() {
         <Route path='/' element={<Home />}>
           <Route path='/' element={
             <>
-              <BannerHome />
-
               <Products />
             </>
           } />
@@ -29,9 +27,7 @@ function App() {
           <Route path='/register' element={<Register />}/>
           
           <Route path='/producto/:id' element={
-            <React.StrictMode>
               <ProductDetail />
-            </React.StrictMode>
           }/>
           <Route path='/cart' element={<ShoppingCart />} />
           <Route path='/newproduct' element={<NewProducts/>}/>

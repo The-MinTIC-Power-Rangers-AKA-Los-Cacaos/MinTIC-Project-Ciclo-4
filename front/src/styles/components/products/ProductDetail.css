@@ -1,3 +1,4 @@
+/* It's the CSS for the page. */
 
 .containerCardMain{
   display: flex;
@@ -38,7 +39,14 @@
     -moz-border-radius: 1vw;
     -ms-border-radius: 1vw;
     -o-border-radius: 1vw;
+    cursor: pointer;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
 }
+
+.imageContainer:hover img{
+  opacity: 0.8;
+}
+
 
 
 
@@ -50,6 +58,8 @@
   align-items: center;
   padding: 1vw;
   overflow:hidden;
+  
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
 }
 .imagensCarousel img {
   border-radius: 0.5vw;
@@ -61,6 +71,11 @@
   -moz-border-radius: 0.5vw;
   -ms-border-radius: 0.5vw;
   -o-border-radius: 0.5vw;
+  cursor: pointer;
+}
+
+.imagensCarousel img:hover{
+  opacity: 0.8;
 }
 
 .cardRigth{
@@ -85,7 +100,7 @@
   padding-left: 2vw;
   min-width: 20vw;
   min-height: 20vw;
-  margin-left: 15vw;
+  margin-left: 5vw;
   background-color: #ffffff;
   border: 1vh #4187AE;
   border-radius: 2vw;
@@ -93,9 +108,11 @@
   -moz-border-radius: 2vw;
   -ms-border-radius: 2vw;
   -o-border-radius: 2vw;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
 }
 
 .nameProduct{
+  display: flex;
   font-family: 'Inter';
   font-style: normal;
   font-size: 1vw;
@@ -106,6 +123,7 @@
 }
 
 .productDesciption{
+  display: flex;
   font-family: 'Inter';
   font-style: normal;
   color: #5A5A5A;
@@ -121,7 +139,7 @@
 }
 
 .priceProductMain {
-
+  display: flex;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 1vw;
@@ -130,10 +148,13 @@
   text-align: center;
   text-decoration-line: underline;
   color: #FF0000;
-  margin: 0;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
   padding: 0;
 
 }
+
+
 
 .hprice{
   display: flex;
@@ -141,7 +162,8 @@
   font-style: normal;
   text-decoration-line: none;
   padding: 0;
-  margin: 0;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
 
  
 }
@@ -153,6 +175,7 @@
   font-size: 1vw;
   padding: 0;
   margin: 0;
+  margin-top: 1vw;
 }
 
 .sellerName{
@@ -160,6 +183,7 @@
   font-style: normal;
   font-size: 1vw;
   color: #009679;
+  margin-top: 1vw;
 
 }
 
@@ -170,6 +194,75 @@
   font-size: 1vw;
   padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+.parrafoRate{
+  display: flex;
+  font-family: 'Inter';
+  font-style: normal;
+  color: #5A5A5A;
+  font-size: 1vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  padding: 0;
+}
+.score{
+  display: inline-block;
+  font-family: "Wingdings";
+  font-size: 1vw;
+  color: #ccc;
+  position:relative ;
+  margin: 0;
+  padding: 0;
+
+}
+
+.score::before,
+.score::after {
+  content: "\2605\2605\2605\2605\2605";
+  display: block;
+}
+.score::after {
+  color: gold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.score.s0::after {
+  width: 0%;
+}
+.score.s1::after {
+  width: 10%;
+}
+.score.s2::after {
+  width: 20%;
+}
+.score.s3::after {
+  width: 30%;
+}
+.score.s4::after {
+  width: 40%;
+}
+.score.s5::after {
+  width: 50%;
+}
+.score.s6::after {
+  width: 60%;
+}
+.score.s7::after {
+  width: 70%;
+}
+.score.s8::after {
+  width: 80%;
+}
+.score.s9::after {
+  width: 90%;
+}
+.score.s10::after {
+  width: 100%;
 }
 
 .rateCantidad{
@@ -177,32 +270,50 @@
   font-style: normal;
   font-size: 1vw;
   color: #009679;
+  margin: 0;
+  padding: 0;
+}
+
+.noOpiniones{
+  display: flex;
+  font-family: 'Inter';
+  font-style: normal;
+  color: #5A5A5A;
+  font-size: 1vw;
+  margin: 0;
+  margin-bottom: 1vw;
 }
 .containerButon{
   display: flex;
   padding: 0;
-  margin-top: 5vh;
-  margin-left: 15vw;
-  height: 5vh;
+  margin-top: 2vw;
+  margin-left: 5vw;
+  height: 2vw;
+  cursor: pointer;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
+  
 }
 
 .containerButon button{
-  height: 6vh;
+  height: 3vw;
   background: #05B593;
   border: none;
-  border-radius: 1.5vh;
-  -webkit-border-radius: 1.5vh;
-  -moz-border-radius: 1.5vh;
-  -ms-border-radius: 1.5vh;
-  -o-border-radius: 1.5vh;
+  border-radius: 1vw;
+  -webkit-border-radius: 1vw;
+  -moz-border-radius: 1vw;
+  -ms-border-radius: 1vw;
+  -o-border-radius: 1vw;
   font-family: 'Inter';
   font-style: normal;
-  font-weight:4vh;
-  font-size: 2vh;
+  font-weight:2vw;
+  font-size: 1vw;
   line-height: 1.5vh;
   color: #FFFFFF;
-  width: 20vw;
+  width: 25vw;
+  cursor: pointer;
 }
 
-
+.containerButon:hover button{
+  opacity: 0.9;
+}
 

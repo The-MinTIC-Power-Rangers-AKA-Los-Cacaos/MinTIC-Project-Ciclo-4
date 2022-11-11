@@ -17,6 +17,7 @@ const ViewProducts = () => {
       }, [dispatch])
 
     const { loading, products, error} = useSelector(state=> state.products)
+      console.log(products, 2)
 
     const setProducts = () => {
         const data = {
@@ -66,9 +67,11 @@ const ViewProducts = () => {
             })
         })
 
+
         return data;
     }
 
+ 
 
 
 
