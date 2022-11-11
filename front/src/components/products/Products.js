@@ -25,7 +25,9 @@ export function Products() {
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
+    console.log(pageNumber,4)
   }
+  
 
   return (
     <>
