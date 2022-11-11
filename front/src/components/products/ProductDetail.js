@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import "../../styles/components/products/ProductDetail.css";
@@ -14,19 +14,17 @@ export const ProductDetail = () => {
   const { loading, product, error } = useSelector(
     (state) => state.productDetails
   );
+  console.log(product);
 
-  const params = useParams();
+  const { id } = useParams();
+  console.log(id);
+
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
 
-
-
   useEffect(() => {
-    dispatch(getProductDetails(params.id));
-    if (error) {
-      dispatch(clearErrors());
-    }
-  }, [dispatch, alert, error, params.id]);
+    dispatch(getProductDetails(id));
+  }, [dispatch, error, id]);
 
   let element;
   let noEl;
@@ -39,37 +37,49 @@ export const ProductDetail = () => {
 
   const [sliderData, setSliderData] = useState(element);
 
-  /* const increaseQty = () => {
-       const contador = document.querySelector('.count')
- 
-       if (contador.valueAsNumber>=product.inventario) return;
- 
-       const qty = contador.valueAsNumber+1;
-       setQuantity(qty)
-    }
- 
-    const decreaseQty = () => {
-     const contador = document.querySelector('.count')
- 
-     if (contador.valueAsNumber <= 1) return;
- 
-     const qty = contador.valueAsNumber-1;
-     setQuantity(qty)
-    }
-*/
-
   const handleCLick = (index) => {
     const slider = product.image[index];
     setSliderData(slider.url);
   };
 
+  let newRate = Math.ceil(product.rate);
+  let classNameRate;
+  switch (newRate) {
+    case 0:
+      classNameRate = <span className="score s0" />;
+      break;
+    case 1:
+      classNameRate = <span className="score s1" />;
+      break;
+    case 2:
+      classNameRate = <span className="score s2" />;
+      break;
+    case 3:
+      classNameRate = <span className="score s3" />;
+      break;
+    case 4:
+      classNameRate = <span className="score s4" />;
+      break;
+    case 5:
+      classNameRate = <span className="score s5" />;
+      break;
+    case 6:
+      classNameRate = <span className="score s6" />;
+      break;
+    case 7:
+      classNameRate = <span className="score s7" />;
+      break;
+    default:
+      classNameRate = <span className="score s7" />;
+      break;
+  }
+
   return (
     <Fragment>
       <Header />
-      {
-        /*loading ? (
-         <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-       ) : (*/
+      {loading ? (
+        <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+      ) : (
         <div className="containerCardMain">
           <div key={product.id} className="cardLeft">
             <div className="imageContainer">
@@ -100,8 +110,10 @@ export const ProductDetail = () => {
               <h2 className="seller">
                 Vendedor: <span className="sellerName">{product.seller} </span>{" "}
               </h2>
+              <p className="parrafoRate">Rate: {classNameRate}</p>
+              <p className="noOpiniones">{product.totalRatings} Reviews</p>
               <h2 className="rate">
-                Calificación: <span className="rateCantidad">{quantity}</span>
+                Calificaciones: <span className="rateCantidad">{quantity}</span>
               </h2>
             </div>
             <div className="rigthTwo">
@@ -111,98 +123,8 @@ export const ProductDetail = () => {
             </div>
           </div>
         </div>
-      }
+      )}
       <Footer />
     </Fragment>
   );
 };
-
-{
-  /*const {loading, product, error} = useSelector(state =>state.productDetails)
-    const {loading, product, error} = useSelector(state =>state.productDetails)
-    const {id} =useParams();
-    const dispatch= useDispatch();
-    const [quantity, setQuantity] = useState(1)
-
-    useEffect(() => {
-        dispatch(getProductDetails(id))
-        if (error){
-            dispatch(clearErrors())
-        }
-    
-       }, [dispatch, error, id])
-
-       const increaseQty = () => {
-        const contador = document.querySelector('.count')
-  
-        if (contador.valueAsNumber>=product.inventario) return;
-  
-        const qty = contador.valueAsNumber+1;
-        setQuantity(qty)
-     }
-  
-     const decreaseQty = () => {
-      const contador = document.querySelector('.count')
-  
-      if (contador.valueAsNumber <= 1) return;
-  
-      const qty = contador.valueAsNumber-1;
-      setQuantity(qty)
-     }
-
-     console.log(product.rate)
-
-       return (
-           <>
-               
-               <Header />
-
-              {/* <div className='imageContainer'>
-                          {product.image && product.image.map(img =>(
-                           <img className='imgContainer' src={img.url} alt="img"></img>
-                           ))}
-                </div>
-                <div className='rating-outer'>
-                <div className="rating-inner" style={{width: `${(product.rate/5)*100}%`}}></div>
-                </div>*/
-}
-
-{
-  /*<div className='containerCardMain' >
-                   <div key={product.id} className='cardLeft' >
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" pause='hover'>
-                    <div className='col-12 col-lg-5 img-fluid carousel-inner' id="imagen_producto" >
-                        <div className="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400">
-                            {product.image && product.image.map(img =>(
-                                <img className="d-block w-100 carousel-item active" src={img.url} alt={product.nombre}></img>
-                            ))}
-                            </div>
-                            </div>
-                    </div>
-                                    
-
-                       <div className='cardRigth' >
-                           <div className='rigthOne'>
-                               <div className='nameProduct'>
-                                   <h1 className='titlteMain'>{product.name}</h1>
-                               </div>                         
-                               <div className='nameproductType'>
-                                   <h2>{product.description}</h2>
-                               </div>
-                               <div className='priceProductMain'>
-                                   <h3 className='hprice'>${product.price}</h3>
-                               </div>
-                           </div>
-                           <div className='rigthTwo'>
-                               <div className='containerButon'>
-                                   <button>Añadir al carrito</button>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-       </div>
-               <Footer />      
-           </>
-        )
-        */
-}

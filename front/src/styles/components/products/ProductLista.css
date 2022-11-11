@@ -12,6 +12,7 @@
   -moz-border-radius: 0.7vw;
   -ms-border-radius: 0.7vw;
   -o-border-radius: 0.7vw;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
 }
 
 
@@ -19,6 +20,11 @@
 width: 17vw;
 height: 15vw;
 margin-top: 0.09vw;
+cursor: pointer;
+}
+
+.card:hover img{
+  opacity: 0.8;
 }
 
 .card{
@@ -81,8 +87,26 @@ line-height: 0.7vw;
 color: #FFFFFF;
 display: block;
 margin: auto;
+cursor: pointer;
 }
 
+.butonAgregar:hover button{
+  opacity: 0.8;
+}
+
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.pagination li{
+
+  margin: 0 0.5vw;
+
+}
 
 
 
