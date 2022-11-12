@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import "../../styles/components/layout/Header.css"
+import { Search } from './Search'
 
 const Header = () => {
   return (
@@ -8,14 +9,7 @@ const Header = () => {
       <header class="Rectangle-1">
         <Link to={'/'}><img class="logo-1" src="../../img/logorecortada.png" alt=""></img></Link>
 
-        <div class="wrap">
-          <div class="search">
-            <input type="text" class="searchTerm" placeholder="¿Qué estás buscando?"></input>
-            <button type="submit" class="searchButton">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </div>
+        <Search/>
 
         {/* <div class="carrito">
 

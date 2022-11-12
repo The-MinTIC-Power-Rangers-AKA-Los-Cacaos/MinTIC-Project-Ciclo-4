@@ -3,7 +3,6 @@ import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom'
 import React from 'react';
 import NotFound from './pages/NotFound';
 import Home from './pages/Home';
-import { BannerHome } from './components/layout/BannerHome';
 import {Login} from './pages/Login';
 import { Register } from './pages/Register';
 import { Products } from './components/products/Products';
@@ -14,7 +13,7 @@ import NewProducts from './components/products/NewProducts';
 
 function App() {
   return (
-   
+
       <Routes>
         <Route path='/' element={<Home />}>
           <Route path='/' element={
@@ -22,17 +21,18 @@ function App() {
               <Products />
             </>
           } />
-       </Route>
-          <Route path='/login' element={<Login />}/>
-          <Route path='/register' element={<Register />}/>
+        </Route>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/register' element={<Register />}/>
           
-          <Route path='/producto/:id' element={
-              <ProductDetail />
-          }/>
-          <Route path='/cart' element={<ShoppingCart />} />
-          <Route path='/newproduct' element={<NewProducts/>}/>
-          <Route path='/saleslist' element={<SalePage/>}/>
+        <Route path='/producto/:id' element={
+            <ProductDetail />
+        }/>
+        <Route path='/cart' element={<ShoppingCart />} />
+        <Route path='/newproduct' element={<NewProducts/>}/>
+        <Route path='/saleslist' element={<SalePage/>}/>
         <Route path='*' element={<NotFound />}/>
+        <Route path='/busqueda/:keyword' element={<Home/>}/>
       </Routes>
   );
 }

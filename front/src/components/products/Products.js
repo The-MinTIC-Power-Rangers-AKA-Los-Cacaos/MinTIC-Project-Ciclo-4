@@ -20,8 +20,9 @@ export function Products() {
   const dispatch = useDispatch();
     
   useEffect(() => {
-    dispatch(getProducts(currentPage, keyword, precio));
-  }, [dispatch, error, currentPage, keyword, precio]);
+    dispatch(getProducts(currentPage, keyword));
+  }, [dispatch, error, currentPage, keyword]);
+  console.log("keyword in home: ", keyword);
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
