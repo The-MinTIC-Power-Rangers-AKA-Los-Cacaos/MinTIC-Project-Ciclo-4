@@ -14,7 +14,7 @@ export const ProductDetail = () => {
   const { loading, product, error } = useSelector(
     (state) => state.productDetails
   );
-  console.log(product);
+
 
   const { id } = useParams();
   console.log(id);

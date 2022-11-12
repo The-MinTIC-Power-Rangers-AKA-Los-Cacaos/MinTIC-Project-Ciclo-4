@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { MDBDataTable } from 'mdbreact'
-import { getProducts } from '../../actions/productActions'
+import { getProductsAll } from '../../actions/productActions'
 import "../../styles/components/products/ViewProducts.css"
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
@@ -12,17 +12,14 @@ import Pagination from 'react-js-pagination';
 
 const ViewProducts = () => {
    
-    const params = useParams();
-    const keyword = params.keyword;
-    const [precio, setPrecio] = useState([100, 1000000]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const { loading, products, error, resPerPage, productsCount } = useSelector(
-      (state) => state.products
-    );
 
+    const {productsAll} = useSelector(
+      (state) => state.productsAll
+    );
+        console.log(productsAll,3)
     const dispatch= useDispatch();
     useEffect(() => {
-        dispatch(getProducts(currentPage, keyword, precio));
+        dispatch(getProductsAll());
       }, [dispatch])
 
 
@@ -63,8 +60,8 @@ const ViewProducts = () => {
             ],
             rows: []
         }
-        console.log("productsinfuncion:", products)
-        products.map(product => {
+        console.log("productsinfuncion:", productsAll)
+        productsAll.forEach(product => {
             
             data.rows.push({
                 name: product.name,
@@ -80,10 +77,6 @@ const ViewProducts = () => {
         return data;
     }
 
-    function setCurrentPageNo(pageNumber) {
-        setCurrentPage(pageNumber);
-        console.log(pageNumber,5)
-      }
 
 
 
@@ -106,30 +99,16 @@ const ViewProducts = () => {
         </div>
         <div class="Table-viewProducts">
         <MDBDataTable
-            data={setProducts()}
-            className="px-3"
-            bordered
-            striped
-            noBottomColumns={true}
-            theadTextWhite={true}
-            paging={false}
+           data={setProducts()}
+           className="px-3"
+           bordered
+           striped
+           noBottomColumns={true}
+           theadTextWhite={true}
+           entries={4}
             hover/>
         </div>
-        <div className="pagination">
-        <Pagination
-          activePage={currentPage}
-          itemsCountPerPage={resPerPage}
-          totalItemsCount={productsCount}
-          onChange={setCurrentPageNo}
-          nextPageText={"Siguiente"}
-          prevPageText={"Anterior"}
-          firstPageText={"Primera"}
-          lastPageText={"Ultima"}
-          itemClass="page-item"
-          linkClass="page-link"
-        />
-      </div>
-    </div>
+  </div>
     <Footer/>
     </Fragment>
   )

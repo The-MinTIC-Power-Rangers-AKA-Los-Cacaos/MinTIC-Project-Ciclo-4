@@ -2,6 +2,9 @@
     ALL_PRODUCTS_SUCCESS, 
     ALL_PRODUCTS_FAIL,
     CLEAR_ERRORS,
+    ALL_PRODUCTS_ALL_REQUEST,
+    ALL_PRODUCTS_ALL_SUCCESS,
+    ALL_PRODUCTS_ALL_FAIL,
     PRODUCT_DETAILS_REQUEST,
     PRODUCT_DETAILS_SUCCESS,
     PRODUCT_DETAILS_FAIL} from "../constants/productConstants";
@@ -25,6 +28,39 @@ export const productsReducer = (state ={ products: []}, action)=>{
             }
 
         case ALL_PRODUCTS_FAIL:
+            return{
+                loading:false,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return{
+                ...state,
+                error:null
+            }
+
+
+        default:
+            return state;
+    }
+}
+
+
+export const productsAllReducer = (state ={ productsAll: []}, action)=>{
+    switch(action.type){
+        case ALL_PRODUCTS_ALL_REQUEST:
+            return{
+                loading:true,
+                productsAll:[],
+            }
+
+        case ALL_PRODUCTS_ALL_SUCCESS:
+            return{
+                loading: false,
+                productsAll: action.payload.products
+            }
+
+        case  ALL_PRODUCTS_ALL_FAIL:
             return{
                 loading:false,
                 error: action.payload

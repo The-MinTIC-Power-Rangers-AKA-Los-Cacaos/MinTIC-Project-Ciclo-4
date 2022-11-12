@@ -6,9 +6,11 @@ const fetch = (url) =>
 import("node-fetch").then(({ default: fetch }) => fetch(url));
 
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
+  
+  //const productsAll = await Product.find();
   const resPerPage = 5;
   const productsCount = await Product.countDocuments();
-
+  
   const apiFeatures = new APIFeatures(Product.find(), req.query)
     .search()
     .filter();
@@ -20,23 +22,31 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
+    //productsAll,
     productsCount,
     resPerPage,
     filteredProductsCount,
-    products,
+    products
+
   });
 
-  /*const products = await Product.find();
-    if (!products) {
-        return next(new ErrorHandler("Products not found", 404))
-    } else {
-        return res.status(200).json({
-            success: true,
-            quantity: products.length,
-            products
-        })
-    }*/
+ 
 });
+
+exports.getProductsAll = catchAsyncErrors(async (req, res, next) => {
+
+  const productsAll = await Product.find();
+  if (!productsAll) {
+      return next(new ErrorHandler("Products not found", 404))
+  } else {
+      res.status(200).json({
+      success: true,
+      quantity: productsAll.length,
+      productsAll
+      })
+  }
+
+})
 
 exports.getProductById = catchAsyncErrors(async (req, res, next) => {
   const tempProduct = await Product.findById(req.params.id);

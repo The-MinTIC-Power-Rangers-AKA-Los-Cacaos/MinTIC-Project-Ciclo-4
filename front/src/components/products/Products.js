@@ -18,7 +18,7 @@ export function Products() {
     (state) => state.products
   );
   const dispatch = useDispatch();
-
+    
   useEffect(() => {
     dispatch(getProducts(currentPage, keyword, precio));
   }, [dispatch, error, currentPage, keyword, precio]);
