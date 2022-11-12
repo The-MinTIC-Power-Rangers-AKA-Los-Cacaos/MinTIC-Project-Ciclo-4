@@ -24,7 +24,7 @@
 }
  /*Carateristicas del cuadro visible que encierra todo*/
 .cuadroPpal {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -42,7 +42,7 @@
 .cuadroRegistro{
     display: flex;
     flex-wrap: wrap;
-    padding-left: 2vw;
+    padding-left: 1vw;
     margin: 0;
 }
  /*Envuelve los p y los input*/
@@ -61,7 +61,7 @@
     border: 3px solid #05B593;
     border-radius: 1vw;
     margin: 0.5vw 0;
-    width: 12vw;
+    width: 13vw;
     height: 1.5vw;
     font-size: 1vw;
     border-width: 0.2vw;
@@ -92,6 +92,6 @@
 
 }
 .imagenPieDePagina{
-    width: 100vw;
+    width: 100.2vw;
     height: 8vw;
 }

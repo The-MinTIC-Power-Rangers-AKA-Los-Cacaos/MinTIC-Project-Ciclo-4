@@ -10,6 +10,9 @@ import {ProductDetail} from './components/products/ProductDetail';
 import { SalePage } from './components/shop/SalePage';
 import ShoppingCart from './components/cart/ShoppingCart'
 import NewProducts from './components/products/NewProducts';
+import { ResetPassword } from './pages/ResetPassword';
+import { ChangePassword } from './pages/ChangePassword';
+
 
 function App() {
   return (
@@ -21,9 +24,12 @@ function App() {
               <Products />
             </>
           } />
-        </Route>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/register' element={<Register />}/>
+       </Route>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/register' element={<Register />}/>
+          <Route path='/resetPassword' element={<ResetPassword />}/>
+          <Route path='/changePassword' element={<ChangePassword />}/>
+
           
         <Route path='/producto/:id' element={
             <ProductDetail />
