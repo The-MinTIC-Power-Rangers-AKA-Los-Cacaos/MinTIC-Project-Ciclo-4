@@ -24,7 +24,8 @@ export const productsReducer = (state ={ products: []}, action)=>{
                 products: action.payload.products,
                 productsCount: action.payload.productsCount,
                 resPerPage: action.payload.resPerPage,
-                filteredProductsCount: action.payload.filteredProductsCount
+                filteredProductsCount: action.payload.filteredProductsCount,
+                productsAllAS: action.payload.productsAllAS
             }
 
         case ALL_PRODUCTS_FAIL:
@@ -57,7 +58,7 @@ export const productsAllReducer = (state ={ productsAll: []}, action)=>{
         case ALL_PRODUCTS_ALL_SUCCESS:
             return{
                 loading: false,
-                productsAll: action.payload.products
+                productsAll: action.payload.productsAllAS
             }
 
         case  ALL_PRODUCTS_ALL_FAIL:

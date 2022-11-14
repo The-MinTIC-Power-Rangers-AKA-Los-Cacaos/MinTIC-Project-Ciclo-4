@@ -3,14 +3,13 @@ const Product = require("../models/products");
 const APIFeatures = require("../utils/apiFeatures");
 const ErrorHandler = require("../utils/errorHandler");
 const fetch = (url) =>
-import("node-fetch").then(({ default: fetch }) => fetch(url));
+  import("node-fetch").then(({ default: fetch }) => fetch(url));
 
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
-  
   //const productsAll = await Product.find();
   const resPerPage = 5;
   const productsCount = await Product.countDocuments();
-  
+  const productsAllAS = await Product.find();
   const apiFeatures = new APIFeatures(Product.find(), req.query)
     .search()
     .filter();
@@ -22,31 +21,28 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    //productsAll,
+
     productsCount,
     resPerPage,
     filteredProductsCount,
-    products
-
+    products,
+    productsAllAS,
   });
-
- 
 });
 
 exports.getProductsAll = catchAsyncErrors(async (req, res, next) => {
-
   const productsAll = await Product.find();
+
   if (!productsAll) {
-      return next(new ErrorHandler("Products not found", 404))
+    return next(new ErrorHandler("Products not found", 404));
   } else {
-      res.status(200).json({
+    res.status(200).json({
       success: true,
       quantity: productsAll.length,
-      productsAll
-      })
+      productsAll,
+    });
   }
-
-})
+});
 
 exports.getProductById = catchAsyncErrors(async (req, res, next) => {
   const tempProduct = await Product.findById(req.params.id);
