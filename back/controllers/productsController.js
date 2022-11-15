@@ -6,10 +6,10 @@ const fetch = (url) =>
   import("node-fetch").then(({ default: fetch }) => fetch(url));
 
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
-  //const productsAll = await Product.find();
+
   const resPerPage = 5;
   const productsCount = await Product.countDocuments();
-  const productsAllAS = await Product.find();
+  const productsAll = await Product.find();
   const apiFeatures = new APIFeatures(Product.find(), req.query)
     .search()
     .filter();
@@ -26,22 +26,21 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
     resPerPage,
     filteredProductsCount,
     products,
-    productsAllAS,
+    productsAll
   });
 });
 
 exports.getProductsAll = catchAsyncErrors(async (req, res, next) => {
-  const productsAll = await Product.find();
+  const products = await Product.find();
+  console.log("getproductsAll en controllers:", products)
 
-  if (!productsAll) {
-    return next(new ErrorHandler("Products not found", 404));
-  } else {
+
     res.status(200).json({
       success: true,
-      quantity: productsAll.length,
-      productsAll,
+      quantity: products.length,
+      products
     });
-  }
+  
 });
 
 exports.getProductById = catchAsyncErrors(async (req, res, next) => {

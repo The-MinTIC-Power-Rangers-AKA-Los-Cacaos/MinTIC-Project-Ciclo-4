@@ -11,13 +11,15 @@ import Footer from "../layout/Footer";
 import Pagination from "react-js-pagination";
 
 const ViewProducts = () => {
-  const { productsAll } = useSelector((state) => state.productsAll);
-  console.log(productsAll, 3);
+  const {products} = useSelector((state) => state.products);
+  console.log(products, 3);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductsAll());
   }, [dispatch]);
 
+
+  
   const setProducts = () => {
     let data = {
       columns: [
@@ -54,8 +56,8 @@ const ViewProducts = () => {
       ],
       rows: [],
     };
-    console.log("productsinfuncion:", productsAll);
-    productsAll.forEach((product) => {
+    
+    products.forEach((product) => {
       data.rows.push({
         name: product.name,
         price: `$${product.price}`,
@@ -65,7 +67,7 @@ const ViewProducts = () => {
         rate: product.rate,
       });
     });
-    console.log("data:", data);
+  
 
     return data;
   };
@@ -100,7 +102,7 @@ const ViewProducts = () => {
             hover
           />
         </div>
-      </div>
+  </div>
       <Footer />
     </Fragment>
   );

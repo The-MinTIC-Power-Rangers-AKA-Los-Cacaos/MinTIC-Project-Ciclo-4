@@ -14,7 +14,7 @@ export const Search = () => {
             navigate("/");
         }
     }
-    console.log("keyword in search: ", keyword);
+
 
     return (
         <div class="wrap">

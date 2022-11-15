@@ -20,16 +20,18 @@ function Home() {
   const { loading, products, error, resPerPage, productsCount } = useSelector(
     (state) => state.products
   );
+
+  console.log("products en Home:",products)
   const dispatch = useDispatch();
     
   useEffect(() => {
     dispatch(getProducts(currentPage, keyword));
   }, [dispatch, error, currentPage, keyword]);
-  console.log("keyword in home: ", keyword);
+
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
-    console.log(pageNumber,4)
+
   }
   return (
     <>

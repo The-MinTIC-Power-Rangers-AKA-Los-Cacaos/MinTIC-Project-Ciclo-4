@@ -16,15 +16,15 @@ import {
 export const getProducts =
   (currentPage = 1, keyword = "") =>
   async (dispatch) => {
-    console.log("keyword in actions: ", keyword);
     try {
       dispatch({ type: ALL_PRODUCTS_REQUEST });
       const { data } = await axios.get(
         `/api/productos?keyword=${keyword}&page=${currentPage}`
       );
+      console.log("getdata en actions:", data)
       dispatch({
         type: ALL_PRODUCTS_SUCCESS,
-        payload: data,
+        payload: data
       });
     } catch (error) {
       dispatch({
@@ -37,10 +37,11 @@ export const getProducts =
 export const getProductsAll = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_PRODUCTS_ALL_REQUEST });
-    const { data } = await axios.get("/api/productos");
+    const { data } = await axios.get("/api/admin/productos");
+    console.log("getAlldata en actions:", data.products)
     dispatch({
       type: ALL_PRODUCTS_ALL_SUCCESS,
-      payload: data,
+      payload: data.products
     });
   } catch (error) {
     dispatch({

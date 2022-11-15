@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import Pagination from "react-js-pagination";
 import { BannerHome } from "../layout/BannerHome";
 
-export function Products() {
+function Products() {
   const params = useParams();
   const keyword = params.keyword;
   const [precio, setPrecio] = useState([100, 1000000]);
@@ -22,7 +22,6 @@ export function Products() {
   useEffect(() => {
     dispatch(getProducts(currentPage, keyword));
   }, [dispatch, error, currentPage, keyword]);
-  console.log("keyword in home: ", keyword);
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);

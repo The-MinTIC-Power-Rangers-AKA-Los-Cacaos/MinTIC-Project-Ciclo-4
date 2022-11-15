@@ -9,12 +9,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { clearErrors } from "../../actions/productActions";
 import { getProductDetails } from "../../actions/productActions";
+import { CategoryRecomended } from "./CategoryRecomended";
 
 export const ProductDetail = () => {
   const { loading, product, error } = useSelector(
     (state) => state.productDetails
   );
-
 
   const { id } = useParams();
   console.log(id);
@@ -108,6 +108,10 @@ export const ProductDetail = () => {
               <h3 className="priceProductMain hprice">${product.price}</h3>
               <br />
               <h2 className="seller">
+                Categoría:{" "}
+                <span className="sellerName">{product.category} </span>{" "}
+              </h2>
+              <h2 className="seller">
                 Vendedor: <span className="sellerName">{product.seller} </span>{" "}
               </h2>
               <p className="parrafoRate">Rate: {classNameRate}</p>
@@ -124,6 +128,7 @@ export const ProductDetail = () => {
           </div>
         </div>
       )}
+      <CategoryRecomended category={product.category} />
       <Footer />
     </Fragment>
   );
