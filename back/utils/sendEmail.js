@@ -1,23 +1,22 @@
-const nodemailer = require("nodemailer")
+const nodemailer= require("nodemailer")
 
-const sendEmail = async options => {
+const sendEmail = async options =>{
     const transport = nodemailer.createTransport({
         host: "smtp.office365.com",
         port: 587,
         auth: {
-            user: "cacaosfarmacy@outlook.com",
-            pass: "eveffuaaqpptpvjf"
+          user: "cacaosfarmacy@outlook.com",
+          pass: "eveffuaaqpptpvjf"
         }
-    });
-
-    const msg = {
+      });
+    const mensaje={
         from: "Cacaos Company <cacaosfarmacy@outlook.com>",
         to: options.email,
         subject: options.subject,
-        text: options.msg
+        text: options.mensaje
     }
 
-    await transport.sendMail(msg);
+    await transport.sendMail(mensaje)
 }
 
-module.exports = sendEmail;
+module.exports= sendEmail;

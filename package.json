@@ -1,12 +1,12 @@
 {
-  "name": "mintic-project-ciclo-4",
+  "name": "cacaosfarmacy",
   "version": "1.0.0",
-  "description": "Farmacia virtual de Cacaos Company",
+  "description": "Farmacia online Cacaos Company Farmacy",
   "main": "server.js",
   "scripts": {
     "start": "node back/server.js",
-    "dev": "SET NODE_ENV = DEVELOPMENT& nodemon back/server",
-    "prod": "SET NOD_ENV = PRODUCTION& nodemon back/server"
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon back/server",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon back/server"
   },
   "repository": {
     "type": "git",
@@ -21,14 +21,15 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
+    "cloudinary": "^1.32.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.6.5",
+    "mongoose": "^6.6.4",
     "node-fetch": "^3.2.10",
     "nodemailer": "^6.8.0",
-    "redux-thunk": "^2.4.1",
     "validator": "^13.7.0"
   },
   "devDependencies": {

@@ -1,19 +1,26 @@
-const express = require("express");
+const express=require("express");
 const app = express();
-const errorMiddleware = require("./middleware/errors");
-const cookieParser = require("cookie-parser");
+const errorMiddleware= require("./middleware/errors")
+const cookieParser= require("cookie-parser")
+const bodyParser = require('body-parser')
+const fileUpload = require('express-fileupload')
 
+//Uso de constantes importadas
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(fileUpload());
 
-const products = require("./routes/productsRoute");
-const users = require("./routes/authRoute");
-const orders = require("./routes/ordersRoute");
+//Importar rutas
+const productos=require("./routes/products")
+const usuarios=require("./routes/auth")
+const ordenes=require("./routes/orders")
 
-app.use("/api", products);
-app.use("/api", users);
-app.use("/api", orders);
+app.use('/api',productos) //Sujeto a decision (ruta del navegador)
+app.use('/api',usuarios)
+app.use('/api', ordenes)
 
-app.use(errorMiddleware);
+//MiddleWares para manejar errores
+app.use(errorMiddleware)
 
-module.exports = app;
+module.exports=app

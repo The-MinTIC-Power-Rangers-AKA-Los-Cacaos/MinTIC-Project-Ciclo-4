@@ -1,43 +1,74 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
-import "../../styles/components/layout/Header.css"
+import "../../App.css"
+import { Link } from "react-router-dom"
 import { Search } from './Search'
+import { useDispatch, useSelector } from 'react-redux'
+import { useAlert } from 'react-alert'
+import { logout} from "../../actions/userActions"
 
 const Header = () => {
-  return (
-    <Fragment>
-      <header class="Rectangle-1">
-        <Link to={'/'}><img class="logo-1" src="../../img/logorecortada.png" alt=""></img></Link>
+    const {cartItems} = useSelector(state=>state.cart)
+    
+    const alert= useAlert();
+    const dispatch= useDispatch();
 
-        <Search/>
+    const { user, loading } = useSelector(state => state.auth)
 
-        {/* <div class="carrito">
+    const logoutHandler = () =>{
+        dispatch(logout());
+        alert.success("LogOut exitoso")
+    }
+    return (
+        <Fragment>
+            <nav className='navbar row'>
+                <div className='col-12 col-md-3'>
+                    <div className='navbar-brand'>
+                        <Link to="/" ><img src="../images/cacaoscompany.png" alt="Cacaos Farmacy Logo"></img></Link>
+                    </div>
+                </div>
 
-          <a href="#"><img class="img-carrito" src="./img/carrito.png" alt=""></img></a>
+                <div className='col-12 col-md-5 mt-2 mt-md-0'>
+                    {/*Aqui va buscar*/}
+                    <Search />
+                </div>
+                {/*Boton inicio sesión*/}
+                <div className="col-12 col-md-4 mt-4 mt-md-0 text-center">
+                    <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
+                        <span className="ml-1" id="cart_count">{cartItems.length}</span></Link>
+
+                    {user ? (
+                        <div className="ml-4 dropdown d-inline">
+                            <Link to="#!" className="btn dropdown-toggle text-white mr-4" type="button"
+                                id="dropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <figure className='avatar avatar-nav'>
+                                    <img
+                                        src={user.avatar && user.avatar.url}
+                                        alt={user && user.nombre}
+                                        className="rounded-circle"></img>
+                                </figure>
+                                <span>{user && user.nombre}</span>
+                            </Link>
+                            <div className='dropdown-menu' aria-labelledby='dropDownMenu'>
+                                {/*Preguntamos el rol de quien esta online*/}
+                                {user && user.role === "admin" && (
+                                    <Link className="dropdown-item" to="/dashboard">Adm. Productos</Link>
+                                )}
+
+                                <Link className="dropdown-item" to="/">Pedidos</Link>
+                                <Link className="dropdown-item" to="/yo">Mi Perfil</Link>
+                                <Link className="dropdown-item" to="/" onClick={logoutHandler}>Cerrar Sesion</Link>
+                            </div>
+                        </div>
+                    ) : !loading && <Link to="/login" className='btn ml-4' id="login_btn">Login</Link>}
 
 
-        </div> */}
+                </div>
 
-        <Link to={'/cart'} class="carrito"><div>
-          <img class="img-carrito" src="../../img/carrito.png" alt="" />
-        </div></Link>
+            </nav>
 
-        <nav>
-          <label for="touch"><span><img class="login-1" src="../../img/usuarios.png" alt=""></img></span></label>
-          <input type="checkbox" id="touch"></input>
-          <ul class="slide">
-            <li class="text-menu">Correo Electronico:</li>
-            <li><input type="text" class="input-menu"></input></li>
-            <li class="text-menu">Contraseña:</li>
-            <li><input type="text" class="input-menu"></input></li>
-            <li><Link to={'/login'}><button class="salir">Ingresar</button></Link></li>
-            <li class="registro">¿Aun no estas registrado?</li>
-            <li class="registrate"><Link to={'/register'}>Registrate</Link></li>
-          </ul>
-        </nav>
-      </header>
-    </Fragment>
-  )
+        </Fragment>
+    )
+
 }
 
 export default Header

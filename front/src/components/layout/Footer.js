@@ -1,21 +1,14 @@
 import React, { Fragment } from 'react'
-import "../../styles/components/layout/Footer.css"
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <Fragment>
-        <footer class="Rectangle">
-        <div class="box">
-            <a href="#" class="fa-brands fa-facebook" ></a>
-            <a href="#" class="fa fa-telegram"></a>
-            <a href="#" class="fa fa-whatsapp"></a>
-            <a href="#" class="fa fa-github"></a>
-            <a href="#" class="fa fa-youtube"></a>
-            <a href="#" class="fa fa-instagram"></a>
-        </div>
+        <footer className="py-1">
+            <p className="text-center mt-1">
+                Vety Shop Store - 2022 - Mision TIC - Todos los derechos reservados
+            </p>
         </footer>
+
     </Fragment>
   )
 }
-
-export default Footer
