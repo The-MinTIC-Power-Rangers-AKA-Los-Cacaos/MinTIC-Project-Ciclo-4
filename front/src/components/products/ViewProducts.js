@@ -12,7 +12,7 @@ import Pagination from "react-js-pagination";
 
 const ViewProducts = () => {
   const {products} = useSelector((state) => state.products);
-  console.log(products, 3);
+ 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductsAll());

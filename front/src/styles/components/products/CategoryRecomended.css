@@ -1,10 +1,5 @@
 .categoryRecomendedContainer{
   display: flex;
-  flex-direction:column;
-  justify-content: center;
+
 }
 
-.categoryRecomended{
-  display: flex;
-  flex-direction: column;
-}

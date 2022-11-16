@@ -21,7 +21,6 @@ export const getProducts =
       const { data } = await axios.get(
         `/api/productos?keyword=${keyword}&page=${currentPage}`
       );
-      console.log("getdata en actions:", data)
       dispatch({
         type: ALL_PRODUCTS_SUCCESS,
         payload: data
@@ -38,7 +37,6 @@ export const getProductsAll = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_PRODUCTS_ALL_REQUEST });
     const { data } = await axios.get("/api/admin/productos");
-    console.log("getAlldata en actions:", data.products)
     dispatch({
       type: ALL_PRODUCTS_ALL_SUCCESS,
       payload: data.products

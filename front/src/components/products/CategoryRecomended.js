@@ -6,7 +6,7 @@ import { getProducts, getProductsAll } from "../../actions/productActions";
 
 export const CategoryRecomended = ({ category }) => {
   const { products } = useSelector((state) => state.products);
-  console.log("produtos en categorias:", products);
+ 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductsAll());
@@ -18,7 +18,7 @@ export const CategoryRecomended = ({ category }) => {
       ? productsInCategory.push(product)
       : console.log(product)
   );
-  console.log("nuevo:", productsInCategory);
+
   /*function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
   }*/

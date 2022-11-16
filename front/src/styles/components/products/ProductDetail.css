@@ -12,7 +12,6 @@
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-
   align-items: center;
   flex-direction: column;
   width: 30vw;

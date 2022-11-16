@@ -15,13 +15,11 @@ import "../styles/components/products/ProductLista.css";
 function Home() {
   const params = useParams();
   const keyword = params.keyword;
-  const [precio, setPrecio] = useState([100, 1000000]);
   const [currentPage, setCurrentPage] = useState(1);
-  const { loading, products, error, resPerPage, productsCount } = useSelector(
+  const {  products, error, resPerPage, productsCount } = useSelector(
     (state) => state.products
   );
 
-  console.log("products en Home:",products)
   const dispatch = useDispatch();
     
   useEffect(() => {
@@ -40,7 +38,7 @@ function Home() {
       <Routes>
         <Route path='/' exact element={<BannerHome/>}/> 
       </Routes>
-      
+      {<BannerHome/> ? ( 
       <div className="Home">
         {products.map((product) => (
           <div key={product.id} className="tarjetaProduct">
@@ -60,7 +58,8 @@ function Home() {
             </div>
           </div>
         ))}
-      </div>
+      </div>) : "esperando" }
+      {products ? (
       <div className="pagination">
         <Pagination
           activePage={currentPage}
@@ -74,7 +73,7 @@ function Home() {
           itemClass="page-item"
           linkClass="page-link"
         />
-      </div>
+      </div>) : "esperando" }
     <Footer />
     </>
   );

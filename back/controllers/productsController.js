@@ -32,9 +32,6 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
 exports.getProductsAll = catchAsyncErrors(async (req, res, next) => {
   const products = await Product.find();
-  console.log("getproductsAll en controllers:", products)
-
-
     res.status(200).json({
       success: true,
       quantity: products.length,
