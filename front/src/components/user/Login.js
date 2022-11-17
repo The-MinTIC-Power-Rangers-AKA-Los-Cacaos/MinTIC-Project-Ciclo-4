@@ -31,7 +31,7 @@ export const Login = () => {
             {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                 <Fragment>
                     <MetaData title={"Inicie Sesión"} />
-                    <div className='row wrapper'>
+                    <div className='row wrapper container-register'>
                         <div className='col-10 col-lg-5'>
                             <form className='shadow-lg cuadrosD_usuarios'  onSubmit={submitHandler}>
                                 <h1 className='mb-3 titulosD_usuario'>Inicio de Sesión</h1>

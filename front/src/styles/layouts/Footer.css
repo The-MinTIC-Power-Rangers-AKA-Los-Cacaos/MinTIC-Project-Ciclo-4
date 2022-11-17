@@ -5,7 +5,8 @@
     height: 3.4vw;
     background-color: #1f4e77;
     bottom: 0;
-    position: fixed;
+    position: absolute;
+    z-index: 1;
 }
 
 

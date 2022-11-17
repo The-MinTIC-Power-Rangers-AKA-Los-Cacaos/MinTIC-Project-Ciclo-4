@@ -62,7 +62,7 @@ export const Register = () => {
         {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
     <Fragment>
             <MetaData title={'Registrar Usuario'} />
-            <div className="row wrapper">
+            <div className="row wrapper container-register">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg cuadrosD_usuarios" onSubmit={submitHandler} encType='multipart/form-data'>
                         <h1 className="mb-3 titulosD_usuario">Registrate</h1>

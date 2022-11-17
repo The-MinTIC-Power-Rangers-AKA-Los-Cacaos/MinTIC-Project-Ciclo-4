@@ -74,9 +74,9 @@ body {
 
 /*carrito*/
 
-.carrito {
-  /* margin-left: 5vw; */
-}
+/* .carrito {
+  margin-left: 5vw; 
+}*/
 
 .carrito div {
   height: 6vw;
@@ -175,6 +175,8 @@ li {
   backdrop-filter: blur(5px);
   list-style-type: none;
   padding-inline-start: 0;
+  position: absolute;
+  z-index: 1;
 }
 
 /*Texto nombre del usuario*/
