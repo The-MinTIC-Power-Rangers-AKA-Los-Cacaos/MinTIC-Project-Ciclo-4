@@ -35,7 +35,6 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <div className='container container-fluid'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
@@ -56,6 +55,8 @@ function App() {
             {/* <Route path="/dashboard"
               element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} /> */}
 
+            <Route path="/dashboard" element={<Dashboard />} />
+
             <Route path="/updateProduct/:id"
               element={<ProtectedRoute isAdmin={true}><UpdateProduct /></ProtectedRoute>} />
 
@@ -73,15 +74,14 @@ function App() {
 
 
 
-          </Routes>
-        </div>
-        <Routes>
-          {/*Ruta protegida*/}
-          <Route path="/dashboard"
-            element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
-          <Route path="/nuevoProducto"
-            element={<ProtectedRoute isAdmin={true}><NewProduct /></ProtectedRoute>} />
         </Routes>
+                                            {/*<Routes>
+                                              Ruta protegida*
+                                              <Route path="/dashboard"
+                                                element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
+                                              <Route path="/nuevoProducto"
+                                                element={<ProtectedRoute isAdmin={true}><NewProduct /></ProtectedRoute>} />
+                                            </Routes>*/}
         <Footer />
       </div>
     </Router>
