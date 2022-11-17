@@ -10,7 +10,7 @@ import { NEW_PRODUCT_RESET } from '../../constants/productConstants'
 import { useNavigate } from 'react-router-dom'
 
 const NewProduct = () => {
-    const navigate= useNavigate()
+    const navigate = useNavigate()
     const [nombre, setNombre] = useState('');
     const [precio, setPrecio] = useState(0);
     const [descripcion, setDescripcion] = useState('');
@@ -21,13 +21,11 @@ const NewProduct = () => {
     const [imagenPreview, setImagenPreview] = useState([])
 
     const categorias = [
-        "Alimento seco",
-        "Alimento humedo",
-        "Accesorios",
-        "Cuidado e Higiene",
-        "Medicamentos",
-        "Snacks",
-        "Juguetes"
+        "Higiene",
+        "Salud",
+        "Aseo",
+        "Comida",
+        "Nutricion"
     ]
 
     const alert = useAlert();
@@ -128,18 +126,18 @@ const NewProduct = () => {
 
                                 <div className="form-group">
                                     <label htmlFor="description_field">Descripción</label>
-                                    <textarea className="form-control" 
-                                    id="description_field" 
-                                    rows="8" 
-                                    value={descripcion} 
-                                    onChange={(e) => setDescripcion(e.target.value)}></textarea>
+                                    <textarea className="form-control"
+                                        id="description_field"
+                                        rows="8"
+                                        value={descripcion}
+                                        onChange={(e) => setDescripcion(e.target.value)}></textarea>
                                 </div>
 
                                 <div className="form-group">
                                     <label htmlFor="category_field">Categoria</label>
-                                    <select className="form-control" 
-                                    id="category_field" 
-                                    value={categoria} onChange={(e) => setCategoria(e.target.value)}>
+                                    <select className="form-control"
+                                        id="category_field"
+                                        value={categoria} onChange={(e) => setCategoria(e.target.value)}>
                                         {categorias.map(categoria => (
                                             <option key={categoria} value={categoria} >{categoria}</option>
                                         ))}

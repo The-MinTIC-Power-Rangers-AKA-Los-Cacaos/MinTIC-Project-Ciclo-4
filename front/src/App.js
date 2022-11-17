@@ -41,7 +41,6 @@ function App() {
             <Route path="/Home" element={<Home />} />
             <Route path="/producto/:id" element={<ProductDetails />} />
             <Route path="/productList" element={<ProductsList />} />
-            <Route path="/nuevoProducto" element={<NewProduct />} />
             <Route path="/search/:keyword" element={<Home />} />
             <Route path="/carrito" element={<Cart />} />
             <Route path="/login" element={<Login />} />
@@ -54,8 +53,8 @@ function App() {
 
 
             {/*Ruta protegida*/}
-            <Route path="/dashboard"
-              element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
+            {/* <Route path="/dashboard"
+              element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} /> */}
 
             <Route path="/updateProduct/:id"
               element={<ProtectedRoute isAdmin={true}><UpdateProduct /></ProtectedRoute>} />
@@ -76,6 +75,13 @@ function App() {
 
           </Routes>
         </div>
+        <Routes>
+          {/*Ruta protegida*/}
+          <Route path="/dashboard"
+            element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
+          <Route path="/nuevoProducto"
+            element={<ProtectedRoute isAdmin={true}><NewProduct /></ProtectedRoute>} />
+        </Routes>
         <Footer />
       </div>
     </Router>

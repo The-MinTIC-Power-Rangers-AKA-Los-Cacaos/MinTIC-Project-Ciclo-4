@@ -81,7 +81,7 @@ export const Home = () => {
                         </div>
                     </section>
 
-                    <div className='d-flex justify-content-center mt-5'>
+                    <div className='pagination'>
                         <Pagination
                             activePage={currentPage}
                             itemsCountPerPage={resPerPage}
