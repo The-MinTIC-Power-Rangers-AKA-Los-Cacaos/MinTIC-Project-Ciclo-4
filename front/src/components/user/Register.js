@@ -64,15 +64,15 @@ export const Register = () => {
             <MetaData title={'Registrar Usuario'} />
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mb-3">Registrar</h1>
+                    <form className="shadow-lg cuadrosD_usuarios" onSubmit={submitHandler} encType='multipart/form-data'>
+                        <h1 className="mb-3 titulosD_usuario">Registrar</h1>
 
                         <div className="form-group">
                             <label htmlFor="name_field">Nombre</label>
                             <input
                                 type="name"
                                 id="name_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 name='nombre'
                                 value={nombre}
                                 onChange={onChange}
@@ -84,7 +84,7 @@ export const Register = () => {
                             <input
                                 type="email"
                                 id="email_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 name='email'
                                 value={email}
                                 onChange={onChange}
@@ -96,7 +96,7 @@ export const Register = () => {
                             <input
                                 type="password"
                                 id="password_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 name='password'
                                 value={password}
                                 onChange={onChange}
@@ -129,12 +129,10 @@ export const Register = () => {
                                 </div>
                             </div>
                         </div>
-
                         <button
                             id="register_button"
                             type="submit"
-                            className="btn btn-block py-3"
-                            
+                            className="btn-block py-3 botonesD_usuario"
                         >
                             REGISTRAR
                         </button>

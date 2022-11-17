@@ -3,6 +3,7 @@ import MetaData from '../layout/MetaData'
 import { Link, useNavigate } from "react-router-dom"
 import { login, clearErrors } from "../../actions/userActions"
 import { useDispatch, useSelector } from 'react-redux'
+import "../../styles/users/StylesUsuarios.css"
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -32,14 +33,14 @@ export const Login = () => {
                     <MetaData title={"Inicie Sesión"} />
                     <div className='row wrapper'>
                         <div className='col-10 col-lg-5'>
-                            <form className='shadow-lg' onSubmit={submitHandler}>
-                                <h1 className='mb-3'>Inicio de Sesión</h1>
+                            <form className='shadow-lg cuadrosD_usuarios'  onSubmit={submitHandler}>
+                                <h1 className='mb-3 titulosD_usuario'>Inicio de Sesión</h1>
                                 {/*Campo para email*/}
                                 <div className='form-group'>
                                     <label htmlFor='email_field'>Correo electrónico</label>
                                     <input type="email"
                                         id="email_field"
-                                        className='form-control'
+                                        className='form-control inputsD_usuarios'
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}></input>
                                 </div>
@@ -48,18 +49,18 @@ export const Login = () => {
                                     <label htmlFor='password_field'>Contraseña</label>
                                     <input type="password"
                                         id="password_field"
-                                        className='form-control'
+                                        className='form-control inputsD_usuarios'
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                     ></input>
                                 </div>
 
-                                <Link to="/password/forgot" className='float-right mb-4'>Olvidó su contraseña?</Link>
+                                <Link to="/password/forgot" className='float-right mb-2 textosD_usuarios'>¿Olvidó su contraseña?</Link>
 
                                 {/*Boton iniciar sesiòn*/}
-                                <button id="login_button" type="submit" className='btn btn-block py-3'>LOGIN</button>
+                                <button id="login_button" type="submit" className=' btn-block py-3 botonesD_usuario'>INGRESAR</button>
 
-                                <Link to="/register" className='float-right mt-3'>Usuario nuevo? Registrese aquí</Link>
+                                <Link to="/register" className='float-right mt-3'>¿Usuario nuevo? Registrate</Link>
 
                             </form>
                         </div>

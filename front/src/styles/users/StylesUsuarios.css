@@ -1,0 +1,28 @@
+.cuadrosD_usuarios{
+    border-radius: 1.5rem;
+}
+.titulosD_usuario{
+    color: #05b593;
+    display: flex;
+    justify-content: center;
+}
+.inputsD_usuarios{
+    border: 3px solid #05B593;
+    border-width: 0.2vw;
+    border-radius: 1vw;
+}
+.textosD_usuarios{
+    margin: 0;
+}
+.botonesD_usuario{
+    transition: 0.35s;
+    border-radius: 0.6vw;
+    box-shadow: 0 0.26vw 0.26vw 0 rgba(0, 0, 0, 0.25);
+    border: none;
+    background-color: #05b593;
+    color: white;
+    margin-top: 2vw;
+}
+.botonesD_usuario:hover {
+    background-color: #0a8169;
+}
