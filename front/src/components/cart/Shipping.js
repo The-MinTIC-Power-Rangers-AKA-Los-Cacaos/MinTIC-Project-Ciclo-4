@@ -41,14 +41,14 @@ export const Shipping = () => {
             <CheckoutSteps shipping />
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" onClick={submitHandler}>
-                        <h1 className="mb-4">Información de envio</h1>
+                    <form className="shadow-lg cuadrosD_usuarios" onSubmit={submitHandler}>
+                        <h1 className="mb-4 titulosD_usuario">Información de envio</h1>
                         <div className="form-group">
                             <label htmlFor="address_field">Dirección</label>
                             <input
                                 type="text"
                                 id="address_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 value={direccion}
                                 onChange={(e) => setDireccion(e.target.value)}
                                 required
@@ -58,9 +58,9 @@ export const Shipping = () => {
                         <div className="form-group">
                             <label htmlFor="phone_field">Telefono</label>
                             <input
-                                type="phone"
+                                type="number"
                                 id="phone_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 value={telefono}
                                 onChange={(e) => setTelefono(e.target.value)}
                                 required
@@ -71,7 +71,7 @@ export const Shipping = () => {
                             <label htmlFor="country_field">Departamento</label>
                             <select
                                 id="country_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios dpt-select"
                                 value={departamento}
                                 onChange={(e) => setDepartamento(e.target.value)}
                                 required
@@ -90,7 +90,7 @@ export const Shipping = () => {
                                 <label htmlFor="city_field">Ciudad</label>
                                 <select
                                     id="city_field"
-                                    className="form-control"
+                                    className="form-control inputsD_usuarios"
                                     value={ciudad}
                                     onChange={(e) => setCiudad(e.target.value)}
                                     required
@@ -109,7 +109,7 @@ export const Shipping = () => {
                         <button
                             id="shipping_btn"
                             type="submit"
-                            className="btn btn-block py-3"
+                            className="btn btn-block py-3 botonesD_usuario"
                         >
                             CONTINUAR
                         </button>

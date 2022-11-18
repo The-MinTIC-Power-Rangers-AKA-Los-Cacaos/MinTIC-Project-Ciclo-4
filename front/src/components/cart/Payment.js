@@ -73,23 +73,25 @@ export const Payment = () => {
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" onSubmit={submitHandler} >
-                        <h1 className="mb-4">Datos de tarjeta</h1>
+                    <form className="shadow-lg cuadrosD_usuarios" onSubmit={submitHandler} >
+                        <h1 className="mb-4 titulosD_usuario">Datos de tarjeta</h1>
                         <div className="form-group">
                             <label htmlFor="card_num_field">Datos de la tarjeta</label>
                             <input
                                 type="number"
                                 id="card_num_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
+                                required
                             />
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="card_exp_field">Fecha de vencimiento</label>
                             <input
-                                type="text"
+                                type="date"
                                 id="card_exp_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
+                                required
                             />
                         </div>
 
@@ -98,7 +100,8 @@ export const Payment = () => {
                             <input
                                 type="number"
                                 id="card_cvc_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
+                                required
                             />
                         </div>
 
@@ -106,7 +109,7 @@ export const Payment = () => {
                         <button
                             id="pay_btn"
                             type="submit"
-                            className="btn btn-block py-3"
+                            className="btn btn-block py-3 botonesD_usuario"
                         >
                             Pagar ${` - ${orderInfo && orderInfo.precioTotal}`}
                         </button>

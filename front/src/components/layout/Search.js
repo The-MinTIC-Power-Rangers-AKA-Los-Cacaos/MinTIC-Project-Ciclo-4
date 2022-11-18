@@ -8,7 +8,7 @@ export const Search = () => {
         e.preventDefault();
 
         if (keyword.trim()) {
-            navigate(`/busqueda/${keyword}`);
+            navigate(`/search/${keyword}`);
         } else {
             navigate("/");
         }

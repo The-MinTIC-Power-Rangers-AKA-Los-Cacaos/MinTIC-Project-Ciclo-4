@@ -118,7 +118,7 @@ const Header = () => {
                                 {user && user.role === "admin" && (
                                     <li><Link to="/dashboard"><button class="loggedbtn">Administración</button></Link></li>
                                 )}
-                                <li><Link to="/"><button class="loggedbtn">Pedidos</button></Link></li>
+                                <li><Link to="/myOrders"><button class="loggedbtn">Pedidos</button></Link></li>
                                 <li><Link to="/yo"><button class="loggedbtn">Mi perfil</button></Link></li>
                                 <li><Link to="/" onClick={logoutHandler}><button class="loggedbtn lastloggedbtn">Cerrar sesión</button></Link></li>
                             </ul>

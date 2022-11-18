@@ -16,7 +16,7 @@ body {
 .logo-1 {
   margin-left: 3vw;
   display: flex;
-  height: 6vw;
+  height: 6.3vw;
   padding-top: 5%;
   padding-right: auto;
   padding-left: 5%;
@@ -110,11 +110,17 @@ body {
 .MFLabel {
   cursor: pointer;
   display: flex;
-  justify-content: center;
+  /* justify-content: space-between; */
   align-items: center;
   width: 13vw;
-  margin-top: 2vw;
+  margin: 2vw 0 1vw 1vw;
+  transition: .4s;
+  border-radius: 1.5vw;
   /* margin-left: 2vw; */
+}
+
+.MFLabel:hover {
+  background-color: #153f64;
 }
 
 .MFLabel p {
@@ -127,8 +133,9 @@ body {
 }
 
 .MFLogged {
-  /* margin-left: 5vw; */
+  /* margin-left: -1vw; */
   /* margin-top: 1.8vw; */
+  /* margin-left: 1.2vw; */
   width: 3vw;
   height: 3vw;
   display: flex;

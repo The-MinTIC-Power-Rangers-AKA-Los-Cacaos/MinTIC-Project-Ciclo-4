@@ -33,7 +33,7 @@ export const ConfirmOrder = () => {
 
             <CheckoutSteps shipping confirmOrder />
 
-            <div className="row d-flex justify-content-between">
+            <div className="row d-flex justify-content-between tight-up">
                 <div className="col-12 col-lg-8 mt-5 order-confirm">
 
                     <h4 className="mb-3">Información de Envio</h4>
@@ -82,7 +82,7 @@ export const ConfirmOrder = () => {
                         <p>Total: <span className="order-summary-values">${precioTotal}</span></p>
 
                         <hr />
-                        <button id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>Continuar con el pago</button>
+                        <button id="checkout_btn" className="btn btn-primary btn-block botonesD_usuario" onClick={processToPayment}>Continuar con el pago</button>
                     </div>
                 </div>
 

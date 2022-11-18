@@ -14,6 +14,7 @@
     border: 3px solid #05B593;
     border-width: 0.2vw;
     border-radius: 1vw;
+    font-weight: bold;
 }
 .textosD_usuarios{
     margin: 0;
@@ -29,4 +30,5 @@
 }
 .botonesD_usuario:hover {
     background-color: #0a8169;
+    color: white;
 }

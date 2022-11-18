@@ -248,8 +248,6 @@ footer {
 
 #checkout_btn,
 .review-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
   margin-top: 2rem;
   border-radius: 5rem;
 }
@@ -307,12 +305,12 @@ footer {
   padding: 2.5rem 3rem;
 }
 
-.wrapper form .btn {
+/* .wrapper form .btn {
   background-color: #fa9c23;
   border-color: #fa9c23;
   color: white;
   margin-top: 2.5rem;
-}
+} */
 
 .wrapper form a {
   font-size: 0.9rem;
@@ -365,7 +363,6 @@ footer {
   clear: both;
   margin: 20px auto;
   width: auto;
-  font-family: sans-serif;
   overflow: auto;
 }
 
@@ -388,7 +385,7 @@ footer {
 }
 
 .active-step {
-  background: #fa9c23;
+  background: #05B593;
   color: #fff;
 }
 
@@ -396,7 +393,7 @@ footer {
   float: left;
   width: 0;
   border-top: 20px solid transparent;
-  border-left: 15px solid #fa9c23;
+  border-left: 15px solid #05B593;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -404,9 +401,9 @@ footer {
 .triangle2-active {
   width: 0;
   float: left;
-  border-top: 20px solid #fa9c23;
-  border-left: 15px solid #fff;
-  border-bottom: 20px solid #fa9c23;
+  border-top: 20px solid #05B593;
+  border-left: 15px solid #D4F2FF;
+  border-bottom: 20px solid #05B593;
   margin-right: -1px;
 }
 
@@ -423,7 +420,7 @@ footer {
   width: 0;
   float: left;
   border-top: 20px solid #eeeeee;
-  border-left: 15px solid #fff;
+  border-left: 15px solid #D4F2FF;
   border-bottom: 20px solid #eeeeee;
   margin-right: -1px;
 }
@@ -614,4 +611,8 @@ ul.CTAs a {
 .review_user {
   font-size: 0.8rem;
   color: grey;
+}
+
+button:focus{
+  outline: none;
 }
