@@ -72,15 +72,15 @@ export const UpdateProfile = () => {
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mt-2 mb-5">Actualizar Perfil</h1>
+                    <form className="shadow-lg cuadrosD_usuarios" onSubmit={submitHandler} encType='multipart/form-data'>
+                        <h1 className="mt-2 mb-5 titulosD_usuario">Actualizar Perfil</h1>
 
                         <div className="form-group">
                             <label htmlFor="email_field">Nombre</label>
                             <input
                                 type="name"
                                 id="name_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 name='nombre'
                                 value={nombre}
                                 onChange={(e) => setNombre(e.target.value)}
@@ -92,7 +92,7 @@ export const UpdateProfile = () => {
                             <input
                                 type="email"
                                 id="email_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 name='email'
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -114,7 +114,7 @@ export const UpdateProfile = () => {
                                     <input
                                         type='file'
                                         name='avatar'
-                                        className='custom-file-input'
+                                        className='custom-file-input inputsD_usuarios'
                                         id='customFile'
                                         accept='images/*'
                                         onChange={onChange}
@@ -127,7 +127,7 @@ export const UpdateProfile = () => {
                             </div>
                         </div>
 
-                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3"
+                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3 botonesD_usuario"
                             disabled={loading ? true : false} >Actualizar Perfil</button>
                     </form>
                 </div>

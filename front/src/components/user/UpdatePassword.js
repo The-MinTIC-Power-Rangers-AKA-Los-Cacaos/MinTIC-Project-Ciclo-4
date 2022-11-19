@@ -47,14 +47,14 @@ const submitHandler= (e)=>{
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" onSubmit={submitHandler}>
-                        <h1 className="mt-2 mb-5">Actualizar Contraseña</h1>
+                    <form className="shadow-lg cuadrosD_usuarios" onSubmit={submitHandler}>
+                        <h1 className="mt-2 mb-5 titulosD_usuario">Actualizar Contraseña</h1>
                         <div className="form-group">
                             <label for="old_password_field">Contraseña Anterior</label>
                             <input
                                 type="password"
                                 id="old_password_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 value={oldPassword}
                                 onChange={(e) => setOldPassword(e.target.value)}
                             />
@@ -65,13 +65,13 @@ const submitHandler= (e)=>{
                             <input
                                 type="password"
                                 id="new_password_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 value={newPassword}
                                 onChange={(e) => setNewPassword(e.target.value)}
                             />
                         </div>
 
-                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3" 
+                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3 botonesD_usuario" 
                         disabled={loading ? true : false} >Actualizar Contraseña</button>
                     </form>
                 </div>

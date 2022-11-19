@@ -234,11 +234,12 @@
     border: none;
     border-radius: 1.3vw;
     color: white;
-    transition: .4s;
+    transition: .3s;
 }
 
 .pay-btn:hover {
     background-color: #0a8169;
+    box-shadow: 0 0.5vw 0.5vw -0.3vw #7f8385;
 }
 
 .pay-btn:disabled {
