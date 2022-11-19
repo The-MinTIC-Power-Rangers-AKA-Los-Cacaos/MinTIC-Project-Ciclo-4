@@ -11,7 +11,7 @@ import "../styles/Home.css";
 import "../styles/products/ProductAll.css";
 import { Loader } from "./layout/Loader";
 
-export const Home = () => {
+export const HomeFind = () => {
   const params = useParams();
   const keyword = params.keyword;
   const [precio, setPrecio] = useState([100, 1000000]);
@@ -40,7 +40,6 @@ export const Home = () => {
   return (
     <>{loading ? <Loader/> : (
       <div className="Home">
-      <BannerHome/>
         {products.map(
           (product) => (
             pause.push(product.id),
@@ -88,4 +87,4 @@ export const Home = () => {
     </>
   );
 };
-export default Home;
+export default HomeFind;

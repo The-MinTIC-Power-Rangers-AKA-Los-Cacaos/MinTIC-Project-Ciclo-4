@@ -8,6 +8,7 @@ import Sidebar from './Sidebar'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearErrors, deleteProduct, getAdminProducts } from '../../actions/productActions'
+import { Loader } from '../layout/Loader'
 
 const ProductsList = () => {
 
@@ -101,7 +102,7 @@ const ProductsList = () => {
                     <Fragment>
                         <h1 className="my-5 titulosD_usuario">Todos los Productos</h1>
 
-                        {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+                        {loading ? <Loader/> : (
                             <div class="Table-viewProducts">
                                 <MDBDataTable
                                     data={setProducts()}

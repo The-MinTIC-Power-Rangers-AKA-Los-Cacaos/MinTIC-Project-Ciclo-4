@@ -8,6 +8,7 @@ import Sidebar from './Sidebar'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductReviews, deleteReview, clearErrors } from '../../actions/productActions'
 import { DELETE_REVIEW_RESET } from '../../constants/productConstants'
+import { Loader } from '../layout/Loader'
 
 const ProductReviews = () => {
 
@@ -82,11 +83,11 @@ const ProductReviews = () => {
                 usuario: opinion.nombreCliente,
 
                 acciones:
-                <div class="tableBtns">
-                    <Link onClick={() => deleteReviewHandler(opinion._id)}>
-                        <i className="fa fa-trash"></i>
-                    </Link>
-                </div>
+                    <div class="tableBtns">
+                        <Link onClick={() => deleteReviewHandler(opinion._id)}>
+                            <i className="fa fa-trash"></i>
+                        </Link>
+                    </div>
             })
         })
 
@@ -96,6 +97,7 @@ const ProductReviews = () => {
     return (
         <Fragment>
             <MetaData title={'Opiniones por producto'} />
+
             <div className="row">
                 <div className="col-12 col-md-2">
                     <Sidebar />
@@ -128,26 +130,30 @@ const ProductReviews = () => {
                             </div>
 
                         </div>
-
-                        {opiniones && opiniones.length > 0 ? (
-                            <div class="Table-viewProducts">
-                            <MDBDataTable
-                                data={setReviews()}
-                                className="px-3"
-                                noBottomColumns={true}
-                                bordered
-                                striped
-                                hover
-                            />
-                            </div>
-                        ) : (
-                            <p className="mt-5 text-center"></p>
-                        )}
+                        
+                            { opiniones && opiniones.length > 0 ? (
+                                
+                                <div class="Table-viewProducts">
+                                    <MDBDataTable
+                                        data={setReviews()}
+                                        className="px-3"
+                                        noBottomColumns={true}
+                                        bordered
+                                        striped
+                                        hover
+                                    />
+                                </div>
+                                
+                            ) : (
+                                <p className="mt-5 text-center"></p>
+                            )}
+                        
 
 
                     </Fragment>
                 </div>
             </div>
+
 
         </Fragment>
     )

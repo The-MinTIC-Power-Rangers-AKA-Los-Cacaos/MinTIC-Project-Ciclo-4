@@ -3,6 +3,7 @@ import MetaData from '../layout/MetaData'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import "../../styles/users/StylesUsuarios.css"
+import { Loader } from '../layout/Loader'
 
 export const Profile = () => {
 
@@ -10,7 +11,7 @@ export const Profile = () => {
 
     return (
         <Fragment>
-            {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+            {loading ? <Loader/> : (
                 <Fragment>
                     <MetaData title={"Mi perfil"} />
                     <div class="wholeProfile">

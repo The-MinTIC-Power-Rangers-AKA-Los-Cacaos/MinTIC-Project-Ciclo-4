@@ -9,9 +9,10 @@ import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { allOrders, deleteOrder, clearErrors } from '../../actions/orderActions'
 import { DELETE_ORDER_RESET } from '../../constants/orderConstants'
+import { Loader } from '../layout/Loader'
 
 const OrdersList = () => {
-    const navigate= useNavigate();
+    const navigate = useNavigate();
     const alert = useAlert();
     const dispatch = useDispatch();
 
@@ -76,7 +77,7 @@ const OrdersList = () => {
         }
 
         orders.forEach(order => {
-            var fecha= new Date(order.fechaCreacion).toLocaleDateString()
+            var fecha = new Date(order.fechaCreacion).toLocaleDateString()
             data.rows.push({
                 fecha: fecha,
                 id: order._id,
@@ -105,31 +106,33 @@ const OrdersList = () => {
     return (
         <Fragment>
             <MetaData title={'Todos los Pedidos'} />
-            <div className="row">
-                <div className="col-12 col-md-2">
-                    <Sidebar />
+            {loading ? <Loader /> : (
+                <div className="row">
+                    <div className="col-12 col-md-2">
+                        <Sidebar />
+                    </div>
+
+                    <div className="col-12 col-md-10">
+                        <Fragment>
+                            <h1 className="my-5 titulosD_usuario">Todos los pedidos</h1>
+
+                            {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+                                <div class="Table-viewProducts">
+                                    <MDBDataTable
+                                        data={setOrders()}
+                                        className="px-3"
+                                        noBottomColumns={true}
+                                        bordered
+                                        striped
+                                        hover
+                                    />
+                                </div>
+                            )}
+
+                        </Fragment>
+                    </div>
                 </div>
-
-                <div className="col-12 col-md-10">
-                    <Fragment>
-                        <h1 className="my-5 titulosD_usuario">Todos los pedidos</h1>
-
-                        {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
-                            <div class="Table-viewProducts">
-                                <MDBDataTable
-                                    data={setOrders()}
-                                    className="px-3"
-                                    noBottomColumns={true}
-                                    bordered
-                                    striped
-                                    hover
-                                />
-                            </div>
-                        )}
-
-                    </Fragment>
-                </div>
-            </div>
+            )}
 
         </Fragment>
     )

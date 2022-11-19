@@ -6,7 +6,7 @@ export function BannerHome(params) {
     <Fragment>
       <div className="bannerContainer" >
         <div className='imagenContainer'>
-          <img src="../public/images/banner-home.png" style={{ width: "100%" }}></img>
+          <img src="../images/banner-home.png" style={{ width: "100%" }}></img>
         </div>
       </div>
     </Fragment>

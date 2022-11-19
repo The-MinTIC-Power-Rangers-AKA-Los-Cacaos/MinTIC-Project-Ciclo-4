@@ -5,6 +5,7 @@ import { useAlert } from "react-alert"
 import { useDispatch, useSelector } from "react-redux"
 import { clearErrors, myOrders } from '../../actions/orderActions'
 import { Link } from "react-router-dom"
+import { Loader } from '../layout/Loader'
 
 export const ListOrder = () => {
     const { loading, error, orders } = useSelector(state => state.myOrders)
@@ -85,7 +86,7 @@ export const ListOrder = () => {
             <div class="tight-up">
             <h1 className="my-5 titulosD_usuario">Mis Pedidos</h1>
 
-            {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+            {loading ? <Loader/> : (
                 <div class="Table-viewProducts">
                     <MDBDataTable
                         data={setOrders()}

@@ -13,6 +13,7 @@ import { addItemToCart } from "../../actions/cartActions";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 import ListReviews from "../order/ListReviews";
 import "../../styles/products/ProductAll.css";
+import { Loader } from "../layout/Loader";
 
 export const ProductDetails = () => {
   const params = useParams();
@@ -81,7 +82,7 @@ export const ProductDetails = () => {
     stars.forEach((star, index) => {
       star.starValue = index + 1;
 
-      ["click", "mouseover", "mouseout"].forEach(function(e) {
+      ["click", "mouseover", "mouseout"].forEach(function (e) {
         star.addEventListener(e, showRatings);
       });
     });
@@ -138,193 +139,195 @@ export const ProductDetails = () => {
 
   return (
     <Fragment>
-      <Fragment>
-        <MetaData title={product.nombre}></MetaData>
-        <div className="containerCardMain">
-          <div key={product.id} className="cardLeft">
-            <div className="imageContainer">
-              <img src={sliderData || element} />
-            </div>
-            <div className="imagensCarousel">
-              {product.imagen &&
-                product.imagen.map((img, index) => (
-                  <img
-                    key={img.nombre}
-                    className="imgContainer"
-                    src={img.url}
-                    onClick={() => handleCLick(index)}
-                    alt={product.nombre}
-                  ></img>
-                ))}
-            </div>
-          </div>
-          <div className=" cardRigth">
-            <div className="container rigthOne">
-              <div className="nameProduct">
-                <h1 className="titlteMain ">{product.nombre}</h1>
+      {loading ? <Loader /> : (
+        <Fragment>
+          <MetaData title={product.nombre}></MetaData>
+          <div className="containerCardMain">
+            <div key={product.id} className="cardLeft">
+              <div className="imageContainer">
+                <img src={sliderData || element} />
               </div>
-              <h2 className="productDesciption">{product.descripcion}</h2>
+              <div className="imagensCarousel">
+                {product.imagen &&
+                  product.imagen.map((img, index) => (
+                    <img
+                      key={img.nombre}
+                      className="imgContainer"
+                      src={img.url}
+                      onClick={() => handleCLick(index)}
+                      alt={product.nombre}
+                    ></img>
+                  ))}
+              </div>
+            </div>
+            <div className=" cardRigth">
+              <div className="container rigthOne">
+                <div className="nameProduct">
+                  <h1 className="titlteMain ">{product.nombre}</h1>
+                </div>
+                <h2 className="productDesciption">{product.descripcion}</h2>
 
-              <h3 className="priceProductMain hprice">${product.precio}</h3>
-              <br />
-              <h2 className="seller">
-                Categoría:{" "}
-                <span className="sellerName">{product.categoria} </span>{" "}
-              </h2>
-              <h2 className="seller">
-                Vendedor:{" "}
-                <span className="sellerName">{product.vendedor} </span>{" "}
-              </h2>
-              <div className="rating-outer">
+                <h3 className="priceProductMain hprice">${product.precio}</h3>
+                <br />
+                <h2 className="seller">
+                  Categoría:{" "}
+                  <span className="sellerName">{product.categoria} </span>{" "}
+                </h2>
+                <h2 className="seller">
+                  Vendedor:{" "}
+                  <span className="sellerName">{product.vendedor} </span>{" "}
+                </h2>
+                <div className="rating-outer">
+                  <div
+                    className="rating-inner"
+                    style={{ width: `${(product.calificacion / 5) * 100}%` }}
+                  ></div>
+                </div>
+                <p className="noOpiniones">{product.numCalificaciones} Reviews</p>
+              </div>
+              <div className="row rigthTwo">
                 <div
-                  className="rating-inner"
-                  style={{ width: `${(product.calificacion / 5) * 100}%` }}
-                ></div>
-              </div>
-              <p className="noOpiniones">{product.numCalificaciones} Reviews</p>
-            </div>
-            <div className="row rigthTwo">
-              <div
-                style={{ width: "30vw", backgroundColor: "white" }}
-                className="stockCounter justify-content-around contador"
-              >
-                <button
-                  className="btn col-sm-2 btn-menos d-inline"
-                  onClick={decreaseQty}
+                  style={{ width: "30vw", backgroundColor: "white" }}
+                  className="stockCounter justify-content-around contador"
                 >
-                  <img
-                    class="arrow-left"
-                    src="../images/arrow.png"
-                    style={{ width: "1.5vw", cursor: "pointer" }}
+                  <button
+                    className="btn col-sm-2 btn-menos d-inline"
+                    onClick={decreaseQty}
+                  >
+                    <img
+                      class="arrow-left"
+                      src="../images/arrow.png"
+                      style={{ width: "1.5vw", cursor: "pointer" }}
+                    />
+                  </button>
+                  <input
+                    type="number"
+                    className="col-sm-8 form-control count d-inline input-operacion"
+                    value={quantity}
+                    readOnly
                   />
-                </button>
-                <input
-                  type="number"
-                  className="col-sm-8 form-control count d-inline input-operacion"
-                  value={quantity}
-                  readOnly
-                />
-                <button
-                  className="btn col-sm-2 btn-suma d-inline"
-                  onClick={increaseQty}
-                >
-                  <img
-                    class=""
-                    src="../images/arrow.png"
-                    style={{ width: "1.5vw", cursor: "pointer" }}
-                  />
-                </button>
-              </div>
-              <div className="containerButon">
-                <button disabled={product.inventario === 0} onClick={addToCart}>
-                  Añadir al carrito
-                </button>
+                  <button
+                    className="btn col-sm-2 btn-suma d-inline"
+                    onClick={increaseQty}
+                  >
+                    <img
+                      class=""
+                      src="../images/arrow.png"
+                      style={{ width: "1.5vw", cursor: "pointer" }}
+                    />
+                  </button>
+                </div>
+                <div className="containerButon">
+                  <button disabled={product.inventario === 0} onClick={addToCart}>
+                    Añadir al carrito
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="opinionsContainer">
+          <div className="opinionsContainer">
+            <div>
+              {user ? (
+                <button
+                  id="btn_review"
+                  type="button"
+                  className="botonesD_usuario"
+                  data-toggle="modal"
+                  data-target="#ratingModal"
+                  onClick={setUserRatings}
+                  style={{
+                    width: "97%",
+                    height: "5vh",
+                    margin: "1vw",
+                    fontSize: "1vw",
+                  }}
+                >
+                  Deja tu Opinión{" "}
+                  <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
+                </button>
+              ) : (
+                <div className="alert alert-danger mt-5" type="alert">
+                  Inicia Sesión para dejar tu review
+                </div>
+              )}
+            </div>
+            <div className="opinionesAll">
+              {product.opiniones && product.opiniones.length > 0 && (
+                <ListReviews opiniones={product.opiniones} />
+              )}
+            </div>
+          </div>
+          {/*Mensaje emergente para dejar opinion y calificacion */}
           <div>
-            {user ? (
-              <button
-                id="btn_review"
-                type="button"
-                className="botonesD_usuario"
-                data-toggle="modal"
-                data-target="#ratingModal"
-                onClick={setUserRatings}
-                style={{
-                  width: "97%",
-                  height: "5vh",
-                  margin: "1vw",
-                  fontSize: "1vw",
-                }}
-              >
-                Deja tu Opinión{" "}
-                <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
-              </button>
-            ) : (
-              <div className="alert alert-danger mt-5" type="alert">
-                Inicia Sesión para dejar tu review
-              </div>
-            )}
-          </div>
-          <div className="opinionesAll">
-            {product.opiniones && product.opiniones.length > 0 && (
-              <ListReviews opiniones={product.opiniones} />
-            )}
-          </div>
-        </div>
-        {/*Mensaje emergente para dejar opinion y calificacion */}
-        <div>
-          <div className="row mt-2 mb-5">
-            <div className="rating w-50">
-              <div
-                className="modal fade"
-                id="ratingModal"
-                tabIndex="-1"
-                role="dialog"
-                aria-labelledby="ratingModalLabel"
-                aria-hidden="true"
-              >
-                <div className="modal-dialog" role="document">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="titulosD_usuario" id="ratingModalLabel">
-                        Enviar Review
-                      </h5>
-                      <button
-                        type="button"
-                        className="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div className="modal-body">
-                      <ul className="stars ">
-                        <li className="star">
-                          <i className="fa fa-star"></i>
-                        </li>
-                        <li className="star">
-                          <i className="fa fa-star"></i>
-                        </li>
-                        <li className="star">
-                          <i className="fa fa-star"></i>
-                        </li>
-                        <li className="star">
-                          <i className="fa fa-star"></i>
-                        </li>
-                        <li className="star">
-                          <i className="fa fa-star"></i>
-                        </li>
-                      </ul>
+            <div className="row mt-2 mb-5">
+              <div className="rating w-50">
+                <div
+                  className="modal fade"
+                  id="ratingModal"
+                  tabIndex="-1"
+                  role="dialog"
+                  aria-labelledby="ratingModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="titulosD_usuario" id="ratingModalLabel">
+                          Enviar Review
+                        </h5>
+                        <button
+                          type="button"
+                          className="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div className="modal-body">
+                        <ul className="stars ">
+                          <li className="star">
+                            <i className="fa fa-star"></i>
+                          </li>
+                          <li className="star">
+                            <i className="fa fa-star"></i>
+                          </li>
+                          <li className="star">
+                            <i className="fa fa-star"></i>
+                          </li>
+                          <li className="star">
+                            <i className="fa fa-star"></i>
+                          </li>
+                          <li className="star">
+                            <i className="fa fa-star"></i>
+                          </li>
+                        </ul>
 
-                      <textarea
-                        name="review"
-                        id="review"
-                        className="form-control mt3"
-                        value={comentario}
-                        onChange={(e) => setComentario(e.target.value)}
-                      ></textarea>
+                        <textarea
+                          name="review"
+                          id="review"
+                          className="form-control mt3"
+                          value={comentario}
+                          onChange={(e) => setComentario(e.target.value)}
+                        ></textarea>
 
-                      <button
-                        className="botonesD_usuario btn my-3 float-right review-btn px-4 text-white"
-                        onClick={reviewHandler}
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        Enviar
-                      </button>
+                        <button
+                          className="botonesD_usuario btn my-3 float-right review-btn px-4 text-white"
+                          onClick={reviewHandler}
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          Enviar
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </Fragment>
+        </Fragment>
+      )}
     </Fragment>
   );
 };

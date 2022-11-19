@@ -32,6 +32,7 @@ import ProcessOrder from './components/admin/ProcessOrder';
 import UsersList from './components/admin/UserList';
 import UpdateUser from './components/admin/UpdateUser';
 import ProductReviews from './components/admin/ProductReviews';
+import HomeFind from './components/HomeFind';
 
 function App() {
   useEffect(() => {
@@ -46,7 +47,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
             <Route path="/producto/:id" element={<ProductDetails />} />
-            <Route path="/search/:keyword" element={<Home />} />
+            <Route path="/search/:keyword" element={<HomeFind />} />
             <Route path="/carrito" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

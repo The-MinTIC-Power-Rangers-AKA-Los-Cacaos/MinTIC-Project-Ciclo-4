@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAdminProducts } from '../../actions/productActions'
 import { allOrders } from '../../actions/orderActions'
 import { allUsers } from '../../actions/userActions'
+import { Loader } from '../layout/Loader';
 
 export const Dashboard = () => {
 
@@ -31,6 +32,7 @@ export const Dashboard = () => {
 
     return (
         <Fragment>
+            {loading ? <Loader/> : (
             <div className="row">
                 <div className="col-12 col-md-2">
                     <Sidebar />
@@ -119,7 +121,7 @@ export const Dashboard = () => {
 
                 </div>
             </div>
-
+            )}
         </Fragment >
     )
 }
