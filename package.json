@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Farmacia online Cacaos Company Farmacy",
   "main": "server.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
   "scripts": {
     "start": "node back/server.js",
     "dev": "set NODE_ENV=DEVELOPMENT& nodemon back/server",
