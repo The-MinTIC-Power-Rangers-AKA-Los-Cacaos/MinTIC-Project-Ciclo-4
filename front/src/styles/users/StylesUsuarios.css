@@ -9,6 +9,7 @@
     color: #05b593;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .inputsD_usuarios{
     border: 3px solid #05B593;
