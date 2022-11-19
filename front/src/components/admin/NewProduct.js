@@ -173,57 +173,32 @@ const NewProduct = () => {
 
                                         <div className='custom-file'>
                                             <input
-                                                type="number"
-                                                id="stock_field"
-                                                className="form-control"
-                                                value={inventario}
-                                                onChange={(e) => setInventario(e.target.value)}
+                                                type='file'
+                                                name='product_images'
+                                                className='custom-file-input inputsD_usuarios'
+                                                id='customFile'
+                                                onChange={onChange}
+                                                multiple
                                             />
+                                            <label className='custom-file-label' htmlFor='customFile'>
+                                                Seleccione Imágenes
+                                            </label>
                                         </div>
 
-                                        <div className="form-group">
-                                            <label htmlFor="seller_field">Vendedor</label>
-                                            <input
-                                                type="text"
-                                                id="seller_field"
-                                                className="form-control"
-                                                value={vendedor}
-                                                onChange={(e) => setVendedor(e.target.value)}
-                                            />
-                                        </div>
+                                        {imagenPreview.map(img => (
+                                            <img src={img} key={img} alt="Images Preview" className="mt-3 mr-2" width="55" height="52" />
+                                        ))}
 
-                                        <div className='form-group'>
-                                            <label>Imágenes</label>
-
-                                            <div className='custom-file'>
-                                                <input
-                                                    type='file'
-                                                    name='product_images'
-                                                    className='custom-file-input'
-                                                    id='customFile'
-                                                    onChange={onChange}
-                                                    multiple
-                                                />
-                                                <label className='custom-file-label' htmlFor='customFile'>
-                                                    Seleccione Imágenes
-                                                </label>
-                                            </div>
-
-                                            {imagenPreview.map(img => (
-                                                <img src={img} key={img} alt="Images Preview" className="mt-3 mr-2" width="55" height="52" />
-                                            ))}
-
-                                        </div>
-
-                                        <button
-                                            id="login_button"
-                                            type="submit"
-                                            className="btn btn-block py-3 botonesD_usuario"
-                                            disabled={loading ? true : false}
-                                        >
-                                            CREATE
-                                        </button>
                                     </div>
+
+                                    <button
+                                        id="login_button"
+                                        type="submit"
+                                        className="btn btn-block py-3 botonesD_usuario"
+                                        disabled={loading ? true : false}
+                                    >
+                                        CREATE
+                                    </button>
                                 </form>
                             </div>
                         </Fragment>

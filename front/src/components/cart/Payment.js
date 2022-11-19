@@ -57,7 +57,6 @@ export const Payment = () => {
         try{
             dispatch(createOrder(order))
             localStorage.removeItem("cartItems")
-            window.alert("Orden registrada correctamente")
             navigate("/success")
             window.location.reload(false)
         }catch(error){
