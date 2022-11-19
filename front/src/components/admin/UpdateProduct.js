@@ -109,7 +109,7 @@ export const UpdateProduct = () => {
   return (
     <Fragment>
     <MetaData title={'Actualizar producto'} />
-    <div className="row">
+    <div className="row container-admin">
         <div className="col-12 col-md-2">
             <Sidebar />
         </div>
@@ -117,15 +117,15 @@ export const UpdateProduct = () => {
         <div className="col-12 col-md-10">
             <Fragment>
                 <div className="wrapper my-5">
-                    <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mb-4">Actualizar Producto</h1>
+                    <form className="shadow-lg cuadrosD_usuarios" onSubmit={submitHandler} encType='multipart/form-data'>
+                        <h1 className="mb-4 titulosD_usuario">Actualizar Producto</h1>
 
                         <div className="form-group">
                             <label htmlFor="name_field">Nombre</label>
                             <input
                                 type="text"
                                 id="name_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 value={nombre}
                                 onChange={(e) => setNombre(e.target.value)}
                             />
@@ -136,7 +136,7 @@ export const UpdateProduct = () => {
                             <input
                                 type="number"
                                 id="price_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 value={precio}
                                 onChange={(e) => setPrecio(e.target.value)}
                             />
@@ -144,7 +144,7 @@ export const UpdateProduct = () => {
 
                         <div className="form-group">
                             <label htmlFor="description_field">Descripción</label>
-                            <textarea className="form-control" 
+                            <textarea className="form-control inputsD_usuarios" 
                             id="description_field" 
                             rows="8" 
                             value={descripcion} 
@@ -168,7 +168,7 @@ export const UpdateProduct = () => {
                             <input
                                 type="number"
                                 id="stock_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 value={inventario}
                                 onChange={(e) => setInventario(e.target.value)}
                             />
@@ -179,7 +179,7 @@ export const UpdateProduct = () => {
                             <input
                                 type="text"
                                 id="seller_field"
-                                className="form-control"
+                                className="form-control inputsD_usuarios"
                                 value={vendedor}
                                 onChange={(e) => setVendedor(e.target.value)}
                             />
@@ -192,7 +192,7 @@ export const UpdateProduct = () => {
                                 <input
                                     type='file'
                                     name='product_images[]'
-                                    className='custom-file-input'
+                                    className='custom-file-input inputsD_usuarios'
                                     id='customFile'
                                     onChange={onChange}
                                     multiple
@@ -216,7 +216,7 @@ export const UpdateProduct = () => {
                         <button
                             id="login_button"
                             type="submit"
-                            className="btn btn-block py-3"
+                            className="btn btn-block py-3 botonesD_usuario"
                             disabled={loading ? true : false}
                         >
                             ACTUALIZAR

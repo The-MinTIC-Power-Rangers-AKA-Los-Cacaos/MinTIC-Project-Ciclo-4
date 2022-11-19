@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react'
 
 import MetaData from '../layout/MetaData'
 import Sidebar from './Sidebar'
+import "../../styles/users/StylesUsuarios.css"
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -91,23 +92,23 @@ const NewProduct = () => {
     return (
         <Fragment>
             <MetaData title={'Nuevo Producto'} />
-            <div className="row">
+            <div className="row container-admin">
                 <div className="col-12 col-md-2">
                     <Sidebar />
                 </div>
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <div className="wrapper my-5">
-                            <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                                <h1 className="mb-4">Nuevo Producto</h1>
+                        <div className="wrapper my-5 ">
+                            <form className="shadow-lg cuadrosD_usuarios" onSubmit={submitHandler} encType='multipart/form-data'>
+                                <h1 className="mb-4 titulosD_usuario">Nuevo Producto</h1>
 
                                 <div className="form-group">
                                     <label htmlFor="name_field">Nombre</label>
                                     <input
                                         type="text"
                                         id="name_field"
-                                        className="form-control"
+                                        className="form-control inputsD_usuarios"
                                         value={nombre}
                                         onChange={(e) => setNombre(e.target.value)}
                                     />
@@ -118,7 +119,7 @@ const NewProduct = () => {
                                     <input
                                         type="number"
                                         id="price_field"
-                                        className="form-control"
+                                        className="form-control inputsD_usuarios"
                                         value={precio}
                                         onChange={(e) => setPrecio(e.target.value)}
                                     />
@@ -126,7 +127,7 @@ const NewProduct = () => {
 
                                 <div className="form-group">
                                     <label htmlFor="description_field">Descripción</label>
-                                    <textarea className="form-control"
+                                    <textarea className="form-control inputsD_usuarios"
                                         id="description_field"
                                         rows="8"
                                         value={descripcion}
@@ -135,7 +136,7 @@ const NewProduct = () => {
 
                                 <div className="form-group">
                                     <label htmlFor="category_field">Categoria</label>
-                                    <select className="form-control"
+                                    <select className="form-control inputsD_usuarios"
                                         id="category_field"
                                         value={categoria} onChange={(e) => setCategoria(e.target.value)}>
                                         {categorias.map(categoria => (
@@ -149,7 +150,7 @@ const NewProduct = () => {
                                     <input
                                         type="number"
                                         id="stock_field"
-                                        className="form-control"
+                                        className="form-control inputsD_usuarios"
                                         value={inventario}
                                         onChange={(e) => setInventario(e.target.value)}
                                     />
@@ -160,7 +161,7 @@ const NewProduct = () => {
                                     <input
                                         type="text"
                                         id="seller_field"
-                                        className="form-control"
+                                        className="form-control inputsD_usuarios"
                                         value={vendedor}
                                         onChange={(e) => setVendedor(e.target.value)}
                                     />
@@ -193,7 +194,7 @@ const NewProduct = () => {
                                 <button
                                     id="login_button"
                                     type="submit"
-                                    className="btn btn-block py-3"
+                                    className="btn btn-block py-3 botonesD_usuario"
                                     disabled={loading ? true : false}
                                 >
                                     CREATE

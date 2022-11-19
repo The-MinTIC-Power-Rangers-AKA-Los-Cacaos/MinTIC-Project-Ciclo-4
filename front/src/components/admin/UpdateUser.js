@@ -75,15 +75,15 @@ const UpdateUser = () => {
                 <div className="col-12 col-md-10">
                     <div className="row wrapper">
                         <div className="col-10 col-lg-5">
-                            <form className="shadow-lg" onSubmit={submitHandler}>
-                                <h1 className="mt-2 mb-5">Actualizar usuario</h1>
+                            <form className="shadow-lg cuadrosD_usuarios" onSubmit={submitHandler}>
+                                <h1 className="mt-2 mb-5  titulosD_usuario">Actualizar usuario</h1>
 
                                 <div className="form-group">
                                     <label htmlFor="name_field">Nombre</label>
                                     <input
                                         type="name"
                                         id="name_field"
-                                        className="form-control"
+                                        className="form-control inputsD_usuarios"
                                         name='name'
                                         value={nombre}
                                         onChange={(e) => setNombre(e.target.value)}
@@ -95,7 +95,7 @@ const UpdateUser = () => {
                                     <input
                                         type="email"
                                         id="email_field"
-                                        className="form-control"
+                                        className="form-control inputsD_usuarios"
                                         name='email'
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
@@ -107,7 +107,7 @@ const UpdateUser = () => {
 
                                     <select
                                         id="role_field"
-                                        className="form-control"
+                                        className="form-control inputsD_usuarios"
                                         name='role'
                                         value={role}
                                         onChange={(e) => setRole(e.target.value)}
@@ -117,7 +117,7 @@ const UpdateUser = () => {
                                     </select>
                                 </div>
 
-                                <button type="submit" className="btn update-btn btn-block mt-4 mb-3" >Actualizar</button>
+                                <button type="submit" className="btn update-btn btn-block mt-4 mb-3 botonesD_usuario" >Actualizar</button>
                             </form>
                         </div>
                     </div>

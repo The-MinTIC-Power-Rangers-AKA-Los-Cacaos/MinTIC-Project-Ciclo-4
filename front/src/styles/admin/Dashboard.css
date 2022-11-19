@@ -1,5 +1,10 @@
 #sidebar{
     background: #1a4163;
+    transition: .5s;
+}
+
+#sidebar ul li a{
+    transition: .3s;
 }
 .card-u-1{
     background: #c7c7ff;
