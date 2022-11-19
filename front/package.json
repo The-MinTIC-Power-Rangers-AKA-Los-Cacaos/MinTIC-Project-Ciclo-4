@@ -56,5 +56,8 @@
   "devDependencies": {
     "node-sass-install": "^1.0.2",
     "npx": "^10.2.2"
+  },
+  "engines": {
+    "node": "14.17.5"
   }
 }
