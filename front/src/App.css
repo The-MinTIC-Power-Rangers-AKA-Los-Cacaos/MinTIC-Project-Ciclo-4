@@ -777,3 +777,7 @@ a:-webkit-any-link {
   text-decoration: none;
   color: inherit;
 }
+
+.order-details {
+  margin: 3vw auto;
+}

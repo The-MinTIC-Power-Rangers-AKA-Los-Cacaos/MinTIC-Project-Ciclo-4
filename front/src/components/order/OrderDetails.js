@@ -73,7 +73,7 @@ export const OrderDetails = () => {
                                     </div>
                                 ))}
                             </div>
-                            <button className="btn ml-4" id="login_btn" onClick={() => navigate(-1)}>Atrás</button>
+                            <button className="btn ml-4 botonesD_usuario" onClick={() => navigate(-1)}>Atrás</button>
                             <hr />
                         </div>
                     </div>
