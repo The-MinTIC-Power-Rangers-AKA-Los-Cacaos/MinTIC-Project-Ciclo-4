@@ -9,6 +9,7 @@ import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { allUsers, deleteUser, clearErrors } from '../../actions/userActions'
 import { DELETE_USER_RESET } from '../../constants/userConstants'
+import { Loader } from '../layout/Loader'
 
 const UsersList = () => {
     const navigate=useNavigate();
@@ -105,7 +106,7 @@ const UsersList = () => {
                     <Fragment>
                         <h1 className="my-5 titulosD_usuario">Usuarios Registrados</h1>
 
-                        {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+                        {loading ? <Loader/> : (
                             <div class="Table-viewProducts">
                                 <MDBDataTable
                                     data={setUsers()}

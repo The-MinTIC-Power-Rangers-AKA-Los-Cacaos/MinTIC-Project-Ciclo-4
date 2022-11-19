@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { login, clearErrors } from "../../actions/userActions"
 import { useDispatch, useSelector } from 'react-redux'
 import "../../styles/users/StylesUsuarios.css"
+import { Loader } from '../layout/Loader'
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -28,7 +29,7 @@ export const Login = () => {
 
     return (
         <Fragment>
-            {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+            {loading ? <Loader/> : (
                 <Fragment>
                     <MetaData title={"Inicie Sesión"} />
                     <div className='row wrapper container-register'>

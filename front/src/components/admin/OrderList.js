@@ -106,7 +106,6 @@ const OrdersList = () => {
     return (
         <Fragment>
             <MetaData title={'Todos los Pedidos'} />
-            {loading ? <Loader /> : (
                 <div className="row">
                     <div className="col-12 col-md-2">
                         <Sidebar />
@@ -116,7 +115,7 @@ const OrdersList = () => {
                         <Fragment>
                             <h1 className="my-5 titulosD_usuario">Todos los pedidos</h1>
 
-                            {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+                            {loading ? <Loader/> : (
                                 <div class="Table-viewProducts">
                                     <MDBDataTable
                                         data={setOrders()}
@@ -132,8 +131,6 @@ const OrdersList = () => {
                         </Fragment>
                     </div>
                 </div>
-            )}
-
         </Fragment>
     )
 }

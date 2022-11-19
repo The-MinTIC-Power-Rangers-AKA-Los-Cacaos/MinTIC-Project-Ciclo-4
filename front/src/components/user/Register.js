@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import MetaData from '../layout/MetaData'
 import {register, clearErrors} from "../../actions/userActions"
 import {useNavigate} from "react-router-dom"
+import { Loader } from '../layout/Loader';
 
 export const Register = () => {
     const [user, setUser]= useState({
@@ -59,7 +60,7 @@ export const Register = () => {
 
   return (
     <Fragment>
-        {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+        {loading ? <Loader/> : (
     <Fragment>
             <MetaData title={'Registrar Usuario'} />
             <div className="row wrapper container-register">

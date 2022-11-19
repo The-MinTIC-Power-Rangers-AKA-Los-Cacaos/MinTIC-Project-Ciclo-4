@@ -29,6 +29,7 @@ export const ForgotPassword = () => {
 
         const formData = new FormData();
         formData.set('email', email);
+        alert.success('revisa tu correo')
 
         dispatch(forgotPassword(formData))
     }

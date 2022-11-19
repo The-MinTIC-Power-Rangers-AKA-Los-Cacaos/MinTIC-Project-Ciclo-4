@@ -6,18 +6,39 @@
 #sidebar ul li a{
     transition: .3s;
 }
+.card-footer:last-child {
+    border-radius: 0 0 20px 20px;
+}
 .card-u-1{
     background: #c7c7ff;
     border-radius: 20px;
     
 }
+.card-u-1 a{
+    transition: 0.3s;
+}
+.card-u-1 a:hover{
+    background: #9c9cd4;
+}
 .card-u-2{
     background: #f3bbe1;
     border-radius: 20px;
 }
+.card-u-2 a{
+    transition: 0.3s;
+}
+.card-u-2 a:hover{
+    background: #cf8bba;
+}
 .card-u-3{
     background: #a9ecbf;
     border-radius: 20px;
+}
+.card-u-3 a{
+    transition: 0.3s;
+}
+.card-u-3 a:hover{
+    background: #64be82;
 }
 .card-u-4{
     background: #ffd8be;
@@ -51,10 +72,18 @@
     margin-top: 40px;
 }
 .card-u-5{ 
-    background-color:#f5f6ab;
+    background-color:#929292;
     border-radius: 20px;
     
 }
 .text-u-5{
-    color:#ffbf00;
+    color:#5f5840;
+}
+
+.out-of-stock {
+    display: flex;
+}
+
+.out-of-stock div {
+    margin: auto;
 }
