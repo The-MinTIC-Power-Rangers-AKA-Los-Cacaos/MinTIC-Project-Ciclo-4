@@ -134,7 +134,7 @@ export const UpdateProduct = () => {
                         <div className="form-group">
                             <label htmlFor="price_field">Precio</label>
                             <input
-                                type="text"
+                                type="number"
                                 id="price_field"
                                 className="form-control"
                                 value={precio}
@@ -143,7 +143,7 @@ export const UpdateProduct = () => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="description_field">Descripcion</label>
+                            <label htmlFor="description_field">Descripción</label>
                             <textarea className="form-control" 
                             id="description_field" 
                             rows="8" 
@@ -152,7 +152,7 @@ export const UpdateProduct = () => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="category_field">Categoria</label>
+                            <label htmlFor="category_field">Categoría</label>
                             <select className="form-control" 
                             id="category_field" 
                             value={categoria} 
@@ -191,7 +191,7 @@ export const UpdateProduct = () => {
                             <div className='custom-file'>
                                 <input
                                     type='file'
-                                    name='product_images'
+                                    name='product_images[]'
                                     className='custom-file-input'
                                     id='customFile'
                                     onChange={onChange}

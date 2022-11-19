@@ -69,8 +69,10 @@ export const ListOrder = () => {
                     ? <p style={{ color: "green" }}>{order.estado}</p>
                     : <p style={{ color: "red" }}>{order.estado}</p>,
                 acciones:
-                    <Link to={`/order/${order._id}`} className="btn btn-primary">
+                <div class="tableBtns">
+                    <Link to={`/order/${order._id}`}>
                         <i className='fa fa-eye'></i></Link>
+                </div>
             })
         })
         return data;
@@ -81,16 +83,19 @@ export const ListOrder = () => {
 
             <MetaData title={'Mis Pedidos'} />
             <div class="tight-up">
-            <h1 className="my-5">Mis Pedidos</h1>
+            <h1 className="my-5 titulosD_usuario">Mis Pedidos</h1>
 
             {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
-                <MDBDataTable
-                    data={setOrders()}
-                    className="px-3"
-                    bordered
-                    striped
-                    hover
-                />
+                <div class="Table-viewProducts">
+                    <MDBDataTable
+                        data={setOrders()}
+                        className="px-3"
+                        noBottomColumns={true}
+                        bordered
+                        striped
+                        hover
+                    />
+                </div>
             )}
             </div>
         </Fragment>

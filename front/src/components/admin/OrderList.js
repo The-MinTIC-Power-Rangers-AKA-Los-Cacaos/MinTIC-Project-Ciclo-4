@@ -86,12 +86,14 @@ const OrdersList = () => {
                     ? <p style={{ color: 'green' }}>{order.estado}</p>
                     : <p style={{ color: 'red' }}>{order.estado}</p>,
                 acciones: <Fragment>
-                    <Link to={`/admin/order/${order._id}`} className="btn btn-primary py-1 px-2">
-                        <i className="fa fa-eye"></i>
-                    </Link>
-                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteOrderHandler(order._id)}>
-                        <i className="fa fa-trash"></i>
-                    </button>
+                    <div class="tableBtns">
+                        <Link to={`/admin/order/${order._id}`}>
+                            <i className="fa fa-eye"></i>
+                        </Link>
+                        <Link onClick={() => deleteOrderHandler(order._id)}>
+                            <i className="fa fa-trash"></i>
+                        </Link>
+                    </div>
                 </Fragment>
             })
         })
@@ -110,16 +112,19 @@ const OrdersList = () => {
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <h1 className="my-5">Todos los pedidos</h1>
+                        <h1 className="my-5 titulosD_usuario">Todos los pedidos</h1>
 
                         {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
-                            <MDBDataTable
-                                data={setOrders()}
-                                className="px-3"
-                                bordered
-                                striped
-                                hover
-                            />
+                            <div class="Table-viewProducts">
+                                <MDBDataTable
+                                    data={setOrders()}
+                                    className="px-3"
+                                    noBottomColumns={true}
+                                    bordered
+                                    striped
+                                    hover
+                                />
+                            </div>
                         )}
 
                     </Fragment>

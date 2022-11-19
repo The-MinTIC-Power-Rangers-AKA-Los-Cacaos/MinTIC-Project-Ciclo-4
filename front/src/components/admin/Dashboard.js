@@ -37,7 +37,7 @@ export const Dashboard = () => {
                 </div>
 
                 <div className="col-12 col-md-10">
-                    <h1 className="my-4">Administración</h1>
+                    <h1 className="my-4 titulosD_usuario">Administración</h1>
 
                         <Fragment>
                             <MetaData title={'Administracion'} />

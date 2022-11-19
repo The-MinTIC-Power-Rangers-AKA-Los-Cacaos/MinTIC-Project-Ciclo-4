@@ -52,5 +52,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "http://localhost:4000",
+  "devDependencies": {
+    "node-sass-install": "^1.0.2",
+    "npx": "^10.2.2"
+  }
 }

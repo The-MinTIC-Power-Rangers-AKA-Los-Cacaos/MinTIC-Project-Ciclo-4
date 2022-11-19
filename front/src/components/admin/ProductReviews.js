@@ -1,10 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { MDBDataTable } from 'mdbreact'
 
 import MetaData from '../layout/MetaData'
 import Sidebar from './Sidebar'
 
-import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductReviews, deleteReview, clearErrors } from '../../actions/productActions'
 import { DELETE_REVIEW_RESET } from '../../constants/productConstants'
@@ -13,7 +13,6 @@ const ProductReviews = () => {
 
     const [productId, setProductId] = useState('')
 
-    const alert = useAlert();
     const dispatch = useDispatch();
 
     const { error, opiniones } = useSelector(state => state.productReviews);
@@ -22,12 +21,10 @@ const ProductReviews = () => {
     useEffect(() => {
 
         if (error) {
-            alert.error(error);
             dispatch(clearErrors())
         }
 
         if (deleteError) {
-            alert.error(deleteError);
             dispatch(clearErrors())
         }
 
@@ -36,13 +33,12 @@ const ProductReviews = () => {
         }
 
         if (isDeleted) {
-            alert.success('Review Eliminada correctamente');
             dispatch({ type: DELETE_REVIEW_RESET })
         }
 
 
 
-    }, [dispatch, alert, error, productId, isDeleted, deleteError])
+    }, [dispatch, error, productId, isDeleted, deleteError])
 
     const deleteReviewHandler = (id) => {
         dispatch(deleteReview(productId, id))
@@ -86,9 +82,11 @@ const ProductReviews = () => {
                 usuario: opinion.nombreCliente,
 
                 acciones:
-                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteReviewHandler(opinion._id)}>
+                <div class="tableBtns">
+                    <Link onClick={() => deleteReviewHandler(opinion._id)}>
                         <i className="fa fa-trash"></i>
-                    </button>
+                    </Link>
+                </div>
             })
         })
 
@@ -109,11 +107,11 @@ const ProductReviews = () => {
                             <div className="col-5">
                                 <form onSubmit={submitHandler}>
                                     <div className="form-group">
-                                        <label htmlFor="productId_field">Ingrese el ID del producto</label>
+                                        <h2 className="my-5 titulosD_usuario" htmlFor="productId_field">Ingrese el ID del producto</h2>
                                         <input
                                             type="text"
                                             id="productId_field"
-                                            className="form-control"
+                                            className="form-control inputsD_usuarios"
                                             value={productId}
                                             onChange={(e) => setProductId(e.target.value)}
                                         />
@@ -122,7 +120,7 @@ const ProductReviews = () => {
                                     <button
                                         id="search_button"
                                         type="submit"
-                                        className="btn btn-primary btn-block py-2"
+                                        className="btn-block py-2 botonesD_usuario searchReviewsBtn"
                                     >
                                         BUSCAR
                                     </button>
@@ -132,13 +130,16 @@ const ProductReviews = () => {
                         </div>
 
                         {opiniones && opiniones.length > 0 ? (
+                            <div class="Table-viewProducts">
                             <MDBDataTable
                                 data={setReviews()}
                                 className="px-3"
+                                noBottomColumns={true}
                                 bordered
                                 striped
                                 hover
                             />
+                            </div>
                         ) : (
                             <p className="mt-5 text-center"></p>
                         )}

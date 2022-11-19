@@ -262,3 +262,14 @@ input[type=number]::-webkit-outer-spin-button {
 .page-item.active .page-link {
     z-index: 0;
 }
+
+.successText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.successText .total-title {
+    margin-bottom: 2vw;
+}

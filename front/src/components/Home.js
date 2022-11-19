@@ -44,7 +44,7 @@ export const Home = () => {
             pause.push(product.id),
             (
               <div key={product.id} className="tarjetaProduct">
-                <div className="card" id={product._id}>
+                <div className="da-card" id={product._id}>
                   <Link to={`/producto/${product._id}`}>
                     <img src={product.imagen[0].url}></img>
                   </Link>

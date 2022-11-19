@@ -16,7 +16,7 @@
   -webkit-filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
 }
 
-.card {
+.da-card {
   height: 15vw;
   display: flex;
   justify-content: center;
@@ -28,13 +28,13 @@
   -ms-border-radius: 2vw;
   -o-border-radius: 2vw;
 }
-.card img {
+.da-card img {
   width: 15vw;
   height: 12vw;
   margin-top: 0.09vw;
   cursor: pointer;
 }
-.card:hover img {
+.da-card:hover img {
   opacity: 0.8;
 }
 
@@ -321,7 +321,8 @@
 
 .containerButon button {
   height: 3vw;
-  background: #05b593;
+  background-color: #05b593;
+  transition: 0.35s;
   border: none;
   border-radius: 1vw;
   -webkit-border-radius: 1vw;
@@ -339,7 +340,7 @@
 }
 
 .containerButon:hover button {
-  opacity: 0.9;
+  background-color: #0a8169;
 }
 
 .categoryContainer {

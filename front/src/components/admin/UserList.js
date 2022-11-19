@@ -77,12 +77,14 @@ const UsersList = () => {
                 rol: user.role,
 
                 acciones: <Fragment>
-                    <Link to={`/admin/user/${user._id}`} className="btn btn-primary py-1 px-2">
-                        <i className="fa fa-pencil"></i>
-                    </Link>
-                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteUserHandler(user._id)}>
-                        <i className="fa fa-trash"></i>
-                    </button>
+                    <div class="tableBtns">
+                        <Link to={`/admin/user/${user._id}`}>
+                            <i className="fa fa-pencil"></i>
+                        </Link>
+                        <Link onClick={() => deleteUserHandler(user._id)}>
+                            <i className="fa fa-trash"></i>
+                        </Link>
+                    </div>
                 </Fragment>
             })
         })
@@ -101,16 +103,19 @@ const UsersList = () => {
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <h1 className="my-5">Usuarios Registrados</h1>
+                        <h1 className="my-5 titulosD_usuario">Usuarios Registrados</h1>
 
                         {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
-                            <MDBDataTable
-                                data={setUsers()}
-                                className="px-3"
-                                bordered
-                                striped
-                                hover
-                            />
+                            <div class="Table-viewProducts">
+                                <MDBDataTable
+                                    data={setUsers()}
+                                    className="px-3"
+                                    noBottomColumns={true}
+                                    bordered
+                                    striped
+                                    hover
+                                />
+                            </div>
                         )}
 
                     </Fragment>

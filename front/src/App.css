@@ -616,3 +616,158 @@ ul.CTAs a {
 button:focus{
   outline: none;
 }
+
+/*TABLA*/
+.Table-viewProducts{
+  font-size: 1vw;
+}
+
+.Table-viewProducts .col-sm-12 {
+  margin-top: 1vw;
+}
+
+.Table-viewProducts input { /*BUSCADOR TABLA */
+  width: 27vw;
+  border-radius: 0.75vw;
+  border: solid;
+  border-color: #a0a0a0;
+  font-size: 1vw;
+  /*margin-right: 9vw;*/
+  /*margin-right: 29.5vw;*/
+  /* margin-bottom: 2vw; */
+  /* margin-right: 35vw; */
+}
+
+
+.Table-viewProducts th, td{
+  text-align: center;
+  padding: 1vw 1vw;
+  text-align: left;
+  vertical-align: top;
+}
+
+/*margin: 2vw auto 3vw; original*/
+
+.Table-viewProducts thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  border-collapse: separate;
+  background: #04B593;
+  color: #FFFFFF;
+}
+
+
+.Table-viewProducts tr {
+  align-items: center;
+  justify-content: center;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+
+.Table-viewProducts th {
+  font-size: larger;
+}
+
+.Table-viewProducts td {
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  background-color: white;
+  font-weight: bold;
+}
+
+
+.Table-viewProducts thead:first-child tr:first-child th:first-child,
+tbody:first-child tr:first-child td:first-child {
+  border-radius: 15px 0 0 0;
+}
+
+.Table-viewProducts thead:last-child tr:last-child th:first-child,
+tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 15px;
+}
+
+.Table-viewProducts th:first-of-type {
+  border-top-left-radius: 15px;
+}
+
+.Table-viewProducts th:last-of-type {
+  border-top-right-radius: 15px;
+}
+
+.Table-viewProducts tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 15px;
+}
+
+.Table-viewProducts tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 15px;
+}
+
+
+/* AJUSTES MDBData Table  */
+.Table-viewProducts div.dataTables_length.bs-select{
+  display: none;
+}
+
+.Table-viewProducts div.dataTables_info{
+  display: none;
+}
+
+
+
+
+/*Botones tabla*/
+.tableBtns{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.fa-eye {
+  color:#6d52d1;
+  background-color: #baa7ff;
+  padding: 0.2vw;
+  border: 0.2vw solid #6d52d1;
+  border-radius: 1vw;
+  transition: 0.2s;
+}
+
+.fa-eye:hover {
+  background-color: #a992fc;
+}
+
+.fa-pencil {
+  color:#948c20;
+  background-color: #ebe980;
+  padding: 0.2vw;
+  border: 0.2vw solid #948c20;
+  border-radius: 1vw;
+  transition: 0.2s;
+}
+
+.fa-pencil:hover {
+  background-color: #cac830;
+}
+
+.fa-trash {
+  color:#a52222;
+  background-color: #eb8d8d;
+  padding: 0.2vw;
+  border: 0.2vw solid #a52222;
+  border-radius: 1vw;
+  transition: 0.2s;
+}
+
+.fa-trash:hover {
+  background-color: #eb6f6f;
+}
+
+.searchReviewsBtn {
+  margin: 1.5vw auto 2vw;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
+}

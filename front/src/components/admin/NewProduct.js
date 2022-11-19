@@ -116,7 +116,7 @@ const NewProduct = () => {
                                 <div className="form-group">
                                     <label htmlFor="price_field">Precio</label>
                                     <input
-                                        type="text"
+                                        type="number"
                                         id="price_field"
                                         className="form-control"
                                         value={precio}
