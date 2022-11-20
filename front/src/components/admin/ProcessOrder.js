@@ -55,93 +55,94 @@ export const ProcessOrder = () => {
     return (
         <Fragment>
             <MetaData title={`Procesar Orden # ${order && order._id}`} />
-                <div className="row">
-                    <div className="col-12 col-md-2">
-                        <Sidebar />
-                    </div>
-
-                    <div className="col-12 col-md-10">
-                        <Fragment>
-                            {loading ? <Loader/> : (
-                                <div className="row d-flex justify-content-around">
-                                    <div className="col-12 col-lg-7 order-details">
-
-                                        <h2 className="my-5">Orden # {order._id}</h2>
-
-                                        <h4 className="mb-4">Información del envio</h4>
-                                        <p><b>Nombre:</b> {user && user.nombre}</p>
-                                        <p><b>Telefono:</b> {envioInfo && envioInfo.telefono}</p>
-                                        <p className="mb-4"><b>Direccón: </b>{detallesEnvio}</p>
-                                        <p><b>Valor Total:</b> ${precioTotal}</p>
-
-                                        <hr />
-
-                                        <h4 className="my-4">Pago</h4>
-                                        <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "PAGO" : "PENDIENTE DE PAGO"}</b></p>
-
-                                        <h4 className="my-4">No. Transacción</h4>
-                                        <p><b>{pagoInfo && pagoInfo.id}</b></p>
-
-                                        <h4 className="my-4">Estado de la Orden:</h4>
-                                        <p className={order.estado && String(order.estado).includes('Entregado') ? "greenColor" : "redColor"} ><b>{estado}</b></p>
-
-
-
-                                        <h4 className="my-4">Items comprados:</h4>
-
-                                        <hr />
-                                        <div className="cart-item my-1">
-                                            {items && items.map(item => (
-                                                <div key={item.producto} className="row my-5">
-                                                    <div className="col-4 col-lg-2">
-                                                        <img src={item.imagen} alt={item.nombre} height="45" width="65" />
-                                                    </div>
-
-                                                    <div className="col-5 col-lg-5">
-                                                        <Link to={`/producto/${item.producto}`}>{item.nombre}</Link>
-                                                    </div>
-
-
-                                                    <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                                                        <p>${item.precio}</p>
-                                                    </div>
-
-                                                    <div className="col-4 col-lg-3 mt-4 mt-lg-0">
-                                                        <p>{item.cantidad} Unidad(es)</p>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <hr />
-                                    </div>
-
-                                    <div className="col-12 col-lg-3 mt-5">
-                                        <h4 className="my-4">Estado</h4>
-
-                                        <div className="form-group">
-                                            <select
-                                                className="form-control"
-                                                name='status'
-                                                value={estado}
-                                                onChange={(e) => setEstado(e.target.value)}
-                                            >
-                                                <option value="Procesando">Procesando</option>
-                                                <option value="Enviado">Enviado</option>
-                                                <option value="Entregado">Entregado</option>
-                                            </select>
-                                        </div>
-
-                                        <button className="btn btn-primary btn-block" onClick={() => updateOrderHandler(order._id)}>
-                                            Actualizar Estado
-                                        </button>
-                                    </div>
-
-                                </div>
-                            )}
-                        </Fragment>
-                        <button className="btn ml-4" id="login_btn" onClick={() => navigate(-1)}>Atrás</button>
-                    </div>
+            <div className="row">
+                <div className="col-12 col-md-2">
+                    <Sidebar />
                 </div>
+
+                <div className="col-12 col-md-10">
+                    {loading ? <Loader /> : (
+                        <Fragment>
+
+                            <div className="row d-flex justify-content-around">
+                                <div className="col-12 col-lg-7">
+
+                                    <h2 className="my-5">Orden # {order._id}</h2>
+
+                                    <h4 className="mb-4">Información del envio</h4>
+                                    <p><b>Nombre:</b> {user && user.nombre}</p>
+                                    <p><b>Telefono:</b> {envioInfo && envioInfo.telefono}</p>
+                                    <p className="mb-4"><b>Direccón: </b>{detallesEnvio}</p>
+                                    <p><b>Valor Total:</b> ${precioTotal}</p>
+
+                                    <hr />
+
+                                    <h4 className="my-4">Pago</h4>
+                                    <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "PAGO" : "PENDIENTE DE PAGO"}</b></p>
+
+                                    <h4 className="my-4">No. Transacción</h4>
+                                    <p><b>{pagoInfo && pagoInfo.id}</b></p>
+
+                                    <h4 className="my-4">Estado de la Orden:</h4>
+                                    <p className={order.estado && String(order.estado).includes('Entregado') ? "greenColor" : "redColor"} ><b>{estado}</b></p>
+
+
+
+                                    <h4 className="my-4">Items comprados:</h4>
+
+                                    <hr />
+                                    <div className="cart-item my-1">
+                                        {items && items.map(item => (
+                                            <div key={item.producto} className="row my-5">
+                                                <div className="col-4 col-lg-2">
+                                                    <img src={item.imagen} alt={item.nombre} height="45" width="65" />
+                                                </div>
+
+                                                <div className="col-5 col-lg-5">
+                                                    <Link to={`/producto/${item.producto}`}>{item.nombre}</Link>
+                                                </div>
+
+
+                                                <div className="col-4 col-lg-2 mt-4 mt-lg-0">
+                                                    <p>${item.precio}</p>
+                                                </div>
+
+                                                <div className="col-4 col-lg-3 mt-4 mt-lg-0">
+                                                    <p>{item.cantidad} Unidad(es)</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div className="col-12 col-lg-3 mt-5">
+                                    <h4 className="my-4">Estado</h4>
+
+                                    <div className="form-group">
+                                        <select
+                                            className="form-control"
+                                            name='status'
+                                            value={estado}
+                                            onChange={(e) => setEstado(e.target.value)}
+                                        >
+                                            <option value="Procesando">Procesando</option>
+                                            <option value="Enviado">Enviado</option>
+                                            <option value="Entregado">Entregado</option>
+                                        </select>
+                                    </div>
+
+                                    <button className="btn btn-block botonesD_usuario" onClick={() => updateOrderHandler(order._id)}>
+                                        Actualizar Estado
+                                    </button>
+                                </div>
+
+                            </div>
+                            <button className="btn ml-4 botonesD_usuario" onClick={() => navigate(-1)}>Atrás</button>
+                        </Fragment>)}
+
+                </div>
+            </div>
 
         </Fragment>
     )

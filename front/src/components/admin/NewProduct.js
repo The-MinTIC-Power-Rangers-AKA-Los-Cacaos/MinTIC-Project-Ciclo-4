@@ -136,7 +136,7 @@ const NewProduct = () => {
                                     </div>
 
                                     <div className="form-group">
-                                        <label htmlFor="category_field">Categoria</label>
+                                        <label htmlFor="category_field">Categoría</label>
                                         <select className="form-control inputsD_usuarios"
                                             id="category_field"
                                             value={categoria} onChange={(e) => setCategoria(e.target.value)}>

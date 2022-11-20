@@ -36,7 +36,7 @@ export const ConfirmOrder = () => {
             <div className="row d-flex justify-content-between tight-up">
                 <div className="col-12 col-lg-8 mt-5 order-confirm">
 
-                    <h4 className="mb-3">Información de Envio</h4>
+                    <h4 className="mb-3">Información de Envío</h4>
                     <p><b>Nombre:</b> {user && user.nombre}</p>
                     <p><b>Teléfono:</b> {shippingInfo.telefono}</p>
                     <p className="mb-4"><b>Dirección:</b> {`${shippingInfo.direccion}, ${shippingInfo.ciudad} ${shippingInfo.departamento}`}</p>

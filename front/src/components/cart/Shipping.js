@@ -56,7 +56,7 @@ export const Shipping = () => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="phone_field">Telefono</label>
+                            <label htmlFor="phone_field">Teléfono</label>
                             <input
                                 type="number"
                                 id="phone_field"

@@ -22,13 +22,11 @@ export const UpdateProduct = () => {
     const [oldImagen, setOldImagen] = useState([])
 
     const categorias = [
-        "Alimento seco",
-        "Alimento humedo",
-        "Accesorios",
-        "Cuidado e Higiene",
-        "Medicamentos",
-        "Snacks",
-        "Juguetes"
+        "Higiene",
+        "Salud",
+        "Aseo",
+        "Comida",
+        "Nutricion"
     ]
 
     const alert = useAlert();
