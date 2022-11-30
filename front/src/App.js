@@ -42,7 +42,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <div class="bigWrap">
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
@@ -114,7 +115,8 @@ function App() {
 
 
           </Routes>
-        <Footer />
+          <Footer />
+        </div>
       </div>
     </Router>
   );

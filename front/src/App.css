@@ -781,3 +781,7 @@ a:-webkit-any-link {
 .order-details {
   margin: 3vw auto;
 }
+
+.bigWrap {
+  margin-bottom: 3vw;
+}

@@ -3,6 +3,7 @@ import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams, Link } from 'react-router-dom'
 import { clearErrors, getOrderDetails } from '../../actions/orderActions';
+import { Loader } from '../layout/Loader';
 import MetaData from '../layout/MetaData'
 
 export const OrderDetails = () => {
@@ -28,7 +29,7 @@ export const OrderDetails = () => {
         <Fragment>
             <MetaData title={'Detalle del Pedido'} />
 
-            {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+            {loading ? <Loader/> : (
                 <Fragment>
                     <div className="row d-flex justify-content-between">
                         <div className="col-12 col-lg-8 mt-5 order-details">
@@ -60,7 +61,7 @@ export const OrderDetails = () => {
                                         </div>
 
                                         <div className="col-5 col-lg-5">
-                                            <Link to={`/producto/${item.product}`}>{item.nombre}</Link>
+                                            <Link to={`/producto/${item.producto}`}>{item.nombre}</Link>
                                         </div>
 
                                         <div className="col-4 col-lg-2 mt-4 mt-lg-0">

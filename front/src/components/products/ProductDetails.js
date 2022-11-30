@@ -184,6 +184,8 @@ export const ProductDetails = () => {
                   ></div>
                 </div>
                 <p className="noOpiniones">{product.numCalificaciones} Reviews</p>
+                <br />
+                <h2 className="productDesciption">ID: {product._id}</h2>
               </div>
               <div className="row rigthTwo">
                 <div
